@@ -228,9 +228,10 @@ export function TreeExplorer() {
     ).matches;
     canvas.current?.scrollTo({
       top: Math.max(0, step * 120 - 90),
+      left: window.innerWidth <= 680 ? 70 : 0,
       behavior: reduced ? "instant" : "smooth",
     });
-  }, [step]);
+  }, [step, forest]);
   if (error)
     return (
       <Panel>

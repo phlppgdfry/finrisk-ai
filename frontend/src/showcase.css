@@ -1207,3 +1207,9 @@ main {
     font-size: 10px;
   }
 }
+/* Diagram coordinates and scroll offsets share one scale at every viewport. */
+.tree-canvas svg {
+  width: 700px;
+  min-width: 700px;
+  max-width: none;
+}

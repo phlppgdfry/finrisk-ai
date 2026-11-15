@@ -8,6 +8,8 @@ A Dutch/English explorer shows the actual path through any tree, other-branch ro
 
 ## Verification evidence
 
+Local results: **24 Python tests, 2 portable-engine tests and 14 desktop/mobile static-site tests passed**. The first GitHub quality workflow and Pages deployment both completed successfully: [Pages run](https://github.com/phlppgdfry/finrisk-ai/actions/runs/43749101446), [quality run](https://github.com/phlppgdfry/finrisk-ai/actions/runs/43749101454). Public URL: https://phlppgdfry.github.io/finrisk-ai/.
+
 - Python lint and 24 model/API tests pass.
 - Two portable-engine tests check 824 Python oracle predictions plus real-leaf termination and mean aggregation. Maximum observed absolute prediction difference: 2.220446049250313e-16. Cases include the 64 portfolio invoices, 400 independent examples and values on/near split thresholds.
 - A dedicated static-site Playwright configuration tests without the Python API. It covers desktop and mobile: existing invoice/search/export/scenario/CSV/model workflows, all six pages, and the actual tree explorer, language switch, profile update, tree selection and playback.
@@ -40,7 +42,7 @@ Actual renders:
 | Explainability canvas | Real trees have up to 12 splits; the selected path scrolls instead of inventing a short three-level example |
 | Translation | Dutch is the initial explanation language; English toggle is available; data and controls update from the same state |
 | Motion | Code-native tree connectors and node animation plus stepwise playback; CSS respects reduced-motion preference |
-| Responsive | Panels stack; navigation and tree canvas scroll internally; a mobile export visibility regression was corrected |
+| Responsive | Panels stack; navigation and tree canvas scroll internally; mobile export visibility and selected-node scaling/scrolling regressions were corrected |
 
 Above-the-fold copy review: the main headline, subtitle and two hero actions match the new brief. Differences from the generated concept are recorded here: original brand mark retained, real invoice names/amounts/dates retained, actual model numbers substituted, slim source/export utility bar retained, actual model's deep paths replace illustrative shallow branches. The art is an AI-generated metaphor and is described as such in its alternative text. No invented performance, customers or causal claims were added.
 
