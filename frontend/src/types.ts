@@ -1,3 +1,4 @@
+import { STATIC_DEMO } from "./runtime";
 export const features = [
   "amount",
   "payment_terms",
@@ -74,6 +75,10 @@ export type Report = {
   periods: Record<string, string[]>;
 };
 export async function request<T>(url: string, init?: RequestInit): Promise<T> {
+  if (STATIC_DEMO) {
+    const { staticRequest } = await import("./staticApi");
+    return staticRequest<T>(url, init);
+  }
   const r = await fetch(url, init);
   if (!r.ok) {
     let detail = "";

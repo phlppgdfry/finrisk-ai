@@ -1,3 +1,4 @@
+import { resource, STATIC_DEMO, REPOSITORY, asset } from "./runtime";
 import { useState } from "react";
 import { Download, ArrowUpRight, Activity, Info } from "lucide-react";
 import { Panel } from "./components";
@@ -30,7 +31,7 @@ export function ModelReport({ report: r }: { report: Report }) {
             score.
           </p>
         </div>
-        <a className="secondary" href="/api/model-card">
+        <a className="secondary" href={resource("model-card")}>
           <Download size={16} /> Model card
         </a>
       </div>

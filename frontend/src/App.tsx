@@ -1,3 +1,4 @@
+import { resource, STATIC_DEMO, REPOSITORY, asset } from "./runtime";
 import { useState, useEffect } from "react";
 import {
   BarChart3,
@@ -14,6 +15,7 @@ import {
   LoaderCircle,
   AlertCircle,
   CheckCircle2,
+  GitBranch,
 } from "lucide-react";
 import {
   InvoiceTable,
@@ -23,6 +25,8 @@ import {
   Badge,
   Sensitivities,
 } from "./components";
+import { TreeExplorer, ForestGlyph } from "./TreeExplorer";
+import { OverviewHero } from "./OverviewHero";
 import { ScenarioLab } from "./ScenarioLab";
 import { ModelReport } from "./ModelReport";
 import { CaseStudy } from "./CaseStudy";
@@ -41,6 +45,7 @@ const pages = [
   { id: "overview", label: "Overview", icon: LayoutDashboard },
   { id: "invoices", label: "Invoices", icon: FileText },
   { id: "scenario", label: "Scenario lab", icon: FlaskConical },
+  { id: "learn", label: "How it works", icon: GitBranch },
   { id: "model", label: "Model report", icon: BarChart3 },
   { id: "case-study", label: "Case study", icon: BookOpen },
 ];
@@ -86,7 +91,7 @@ export default function App() {
       .catch((e) => {
         if (e.name !== "AbortError")
           setError(
-            "The model API could not be reached. Start the FinRisk API and reload this page.",
+            "The demonstration could not be loaded. Please check your connection and reload.",
           );
       });
     return () => controller.abort();
@@ -168,7 +173,7 @@ export default function App() {
             </div>
           </div>
           <div className="author">
-            Philippe Godfroy <span>v1.0</span>
+            Philippe Godfroy <span>v1.1</span>
           </div>
         </div>
       </aside>
@@ -183,12 +188,21 @@ export default function App() {
             {report && (
               <span className="online">
                 <span />
-                Model ready
+                {STATIC_DEMO ? "Model runs in your browser" : "Model ready"}
               </span>
             )}
-            <a href="/docs" target="_blank" rel="noreferrer">
-              API docs <ExternalLink size={13} />
+            <a href={REPOSITORY} target="_blank" rel="noreferrer">
+              Source code <ExternalLink size={13} />
             </a>
+            {page === "overview" && (
+              <a
+                href={resource("export")}
+                download="finrisk-synthetic-portfolio.csv"
+              >
+                <Download size={13} />
+                Export portfolio
+              </a>
+            )}
             <span className="profile">PG</span>
           </div>
         </header>
@@ -216,18 +230,10 @@ export default function App() {
             <>
               {page === "overview" && (
                 <>
-                  <div className="page-intro">
-                    <div>
-                      <h1>A clearer view of payment risk.</h1>
-                      <p>
-                        Prioritise follow-up. Understand the model. Test what
-                        changes.
-                      </p>
-                    </div>
-                    <a className="secondary" href="/api/export">
-                      <Download size={16} /> Export portfolio
-                    </a>
-                  </div>
+                  <OverviewHero
+                    onExplore={() => go("invoices")}
+                    onLearn={() => go("learn")}
+                  />
                   <div className="stats">
                     {[
                       [
@@ -281,31 +287,21 @@ export default function App() {
                         </span>
                       </div>
                     </Panel>
-                    <section className="action-panel">
-                      <span className="action-icon">
-                        <FlaskConical size={22} />
-                      </span>
+                    <section className="action-panel forest-invitation">
                       <h2>
-                        From prediction
+                        One invoice.
                         <br />
-                        to action.
+                        220 perspectives.
                       </h2>
-                      <p>
-                        Explore payment risk before deciding who to follow up
-                        with. Test a profile and understand how the model
-                        responds.
-                      </p>
+                      <ForestGlyph />
                       <button
                         className="lime-button"
-                        onClick={() => {
-                          setScenario(undefined);
-                          go("scenario");
-                        }}
+                        onClick={() => go("learn")}
                       >
-                        Open scenario lab <ArrowRight size={17} />
+                        Step inside the forest <ArrowRight size={17} />
                       </button>
                       <span className="action-note">
-                        Human judgement stays in the loop.
+                        Follow the actual model, one split at a time.
                       </span>
                     </section>
                   </div>
@@ -351,7 +347,11 @@ export default function App() {
                       >
                         <Upload size={16} /> Score CSV
                       </button>
-                      <a className="primary" href="/api/export">
+                      <a
+                        className="primary"
+                        href={resource("export")}
+                        download="finrisk-synthetic-portfolio.csv"
+                      >
                         <Download size={16} /> Export portfolio
                       </a>
                     </div>
@@ -379,6 +379,7 @@ export default function App() {
                   threshold={report.threshold}
                 />
               )}
+              {page === "learn" && <TreeExplorer />}
               {page === "model" && <ModelReport report={report} />}
               {page === "case-study" && (
                 <CaseStudy

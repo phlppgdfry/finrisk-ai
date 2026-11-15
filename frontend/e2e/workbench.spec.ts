@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test.beforeEach(async ({ page }) => {
   await page.goto("/");
   await expect(
-    page.getByRole("heading", { name: "A clearer view of payment risk." }),
+    page.getByRole("heading", { name: /See the risk/ }),
   ).toBeVisible();
 });
 
@@ -130,6 +130,7 @@ test("all pages fit viewport and have one main heading", async ({ page }) => {
     "Overview",
     "Invoices",
     "Scenario lab",
+    "How it works",
     "Model report",
     "Case study",
   ]) {

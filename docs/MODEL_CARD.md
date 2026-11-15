@@ -44,3 +44,7 @@ The default server and Compose binding are loopback-only. Before public hosting:
 
 ## Reproducibility
 Python 3.13, locked Python dependencies and npm lockfile. Run `make setup train build check package`. Seeds fix data generation and forest sampling. Different numerical libraries/platforms may cause small differences. `trained_at` is expected to change; dataset hash should remain stable on the locked environment. `requirements-lock.txt` captures the tested development environment, including test tools.
+
+## Browser deployment (UI version 1.1)
+
+The GitHub Pages demonstrator exports all 220 actual trees and computes the same forest mean in JavaScript, with float32 input semantics. It has no remote inference backend. The export is tested against 824 Python oracle inputs including split boundaries; numerical tolerance is 1e-12. The tree explorer shows true node paths and bootstrap-weighted leaf probabilities, with unique-row counts separately labelled. Rounded displayed cutoffs are for legibility only. On this static site uploaded CSVs never leave browser memory. Public source archives contain source; regenerate Python artifacts with the training commands.

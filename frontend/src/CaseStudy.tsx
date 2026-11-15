@@ -1,3 +1,4 @@
+import { resource, STATIC_DEMO, REPOSITORY, asset } from "./runtime";
 import {
   ArrowRight,
   Download,
@@ -31,7 +32,7 @@ export function CaseStudy({
             FinRisk AI · an independent portfolio project by Philippe Godfroy
           </p>
         </div>
-        <a href="/api/source" className="secondary">
+        <a href={resource("source")} className="secondary">
           <Download size={16} /> Download source
         </a>
       </div>
@@ -63,7 +64,7 @@ export function CaseStudy({
               {r.rows.toLocaleString()} synthetic invoices · held-out evaluation
             </dd>
             <dt>Scope</dt>
-            <dd>Local-first demonstrator · no real financial data</dd>
+            <dd>Public interactive demonstrator · synthetic data only</dd>
           </dl>
         </div>
       </section>
@@ -135,7 +136,7 @@ export function CaseStudy({
             ))}
           </div>
           <p className="subtle">
-            The exact saved model produces dashboard scores, API responses and
+            The same trained forest produces dashboard scores, API responses and
             scenario results. There is no hand-coded substitute for inference
             and no external LLM dependency.
           </p>
@@ -226,21 +227,22 @@ export function CaseStudy({
         <div>
           <h2>Explore the evidence.</h2>
           <p>
-            Source, model documentation and a live API — all part of the same
-            project.
+            Source, model documentation and real browser inference — all part of
+            the same project.
           </p>
         </div>
         <div className="actions">
-          <a href="/api/source" className="primary">
+          <a href={resource("source")} className="primary">
             <Download size={16} /> Source ZIP
           </a>
           <a
-            href="/docs"
+            href={resource("docs")}
             target="_blank"
             rel="noreferrer"
             className="secondary"
           >
-            API docs <ExternalLink size={15} />
+            {STATIC_DEMO ? "API reference" : "API docs"}{" "}
+            <ExternalLink size={15} />
           </a>
         </div>
       </section>

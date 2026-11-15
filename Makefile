@@ -7,6 +7,7 @@ setup:
 train:
 	$(PYTHON) -m invoice_risk.train
 	$(PYTHON) -m scripts.report
+	$(PYTHON) -m scripts.export_browser
 build:
 	npm --prefix frontend run build
 test:
@@ -22,3 +23,9 @@ package:
 	$(PYTHON) -m scripts.package
 benchmark:
 	$(PYTHON) -m scripts.benchmark
+
+.PHONY: pages
+pages:
+	$(PYTHON) -m scripts.export_browser
+	npm --prefix frontend run test:parity
+	npm --prefix frontend run build:pages

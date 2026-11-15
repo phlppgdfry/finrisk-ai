@@ -12,3 +12,7 @@ dist/
 !.env.example
 frontend/test-results/
 frontend/playwright-report/
+frontend/dist-pages/
+frontend/public/data/
+frontend/public/reading/
+artifacts/browser-fixtures.json

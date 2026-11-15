@@ -1,0 +1,1209 @@
+/* FinRisk v1.1 — shared visual language for the public showcase. */
+:root {
+  background: #fff;
+  color: #243b2d;
+}
+body {
+  background: #fff;
+}
+.workspace {
+  background: #fff;
+}
+.sidebar {
+  width: 212px;
+}
+.workspace {
+  margin-left: 212px;
+  width: calc(100% - 212px);
+}
+.topbar {
+  background: #fff;
+  border-color: #edf1ec;
+  height: 48px;
+}
+.brand {
+  font-size: 24px;
+}
+.sidebar nav a {
+  font-size: 13px;
+}
+.nav-label {
+  margin-top: 35px;
+}
+main {
+  padding: 30px 32px 0;
+}
+.page-intro p {
+  font-size: 14px;
+}
+.primary,
+.secondary,
+.lime-button {
+  font-size: 13px;
+  border-radius: 6px;
+  padding: 12px 17px;
+}
+.primary:hover,
+.secondary:hover {
+  box-shadow: 0 3px 12px #174f3b0c;
+}
+.overview-hero {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  align-items: center;
+  min-height: 270px;
+  gap: 25px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eef2ed;
+  padding-bottom: 23px;
+}
+.hero-copy {
+  position: relative;
+  z-index: 1;
+}
+.hero-copy h1 {
+  font-size: clamp(38px, 3.2vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+.hero-copy p {
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 18px 0 24px;
+  color: #71806e;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.hero-art {
+  margin: 0;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-width: 0;
+}
+.hero-art img {
+  width: 100%;
+  height: 268px;
+  object-fit: contain;
+  display: block;
+  animation: sculpture-arrive 1s ease-out both;
+}
+.hero-art figcaption {
+  display: none;
+}
+.stats {
+  padding: 0;
+  margin-bottom: 30px;
+}
+.stat > span {
+  font-size: 13px;
+  color: #6c7a68;
+}
+.stat strong {
+  font-size: 36px;
+  color: #174f3b;
+}
+.stat small {
+  font-size: 11px;
+  color: #889382;
+}
+.overview-grid {
+  grid-template-columns: 1.55fr 1fr;
+  gap: 20px;
+}
+.distribution-panel {
+  padding: 22px 24px 17px;
+}
+.distribution-panel h2 {
+  font-size: 29px;
+}
+.distribution-panel .section-title p {
+  font-size: 13px;
+}
+.distribution svg {
+  height: 190px;
+}
+.distribution text {
+  font-size: 12px;
+}
+.distribution text.bar-count {
+  font-size: 12px;
+}
+.chart-legend {
+  font-size: 10px;
+}
+.forest-invitation {
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 24px 29px;
+  min-height: 310px;
+  background: #174f3b;
+}
+.forest-invitation h2 {
+  font-size: 32px;
+  color: #f6faed;
+  letter-spacing: -1px;
+}
+.forest-glyph {
+  height: 123px;
+  width: 100%;
+  max-width: 360px;
+  margin: 6px auto 9px;
+  color: #e0ebdd;
+  overflow: visible;
+}
+.glyph-node {
+  animation: node-breathe 5s ease-in-out infinite;
+}
+.glyph-node-1 {
+  animation-delay: 0.6s;
+}
+.glyph-node-2 {
+  animation-delay: 1.2s;
+}
+.glyph-node-3 {
+  animation-delay: 1.8s;
+}
+.glyph-lines {
+  stroke-dasharray: 160;
+  animation: trace-lines 2.5s ease-out both;
+}
+.action-note {
+  font-size: 11px;
+  color: #acc4ac;
+  margin-top: 12px;
+}
+.forest-invitation .lime-button {
+  width: 100%;
+  max-width: 300px;
+}
+.table-heading h2 {
+  font-size: 29px;
+}
+.table-heading p {
+  font-size: 12px;
+}
+.table-scroll th,
+.table-sort {
+  font-size: 11px;
+}
+.table-scroll td {
+  font-size: 13px;
+}
+.customer {
+  font-size: 13px;
+}
+.invoice-link {
+  font-size: 12px;
+}
+.search input {
+  font-size: 12px;
+  width: 205px;
+}
+.badge {
+  font-size: 11px;
+}
+.risk-meter b {
+  font-size: 12px;
+}
+.table-toolbar {
+  padding-top: 15px;
+  padding-bottom: 13px;
+}
+.segments button {
+  font-size: 12px;
+  padding: 8px 11px;
+}
+.segments button span {
+  font-size: 10px;
+}
+.table-footer {
+  font-size: 11px;
+}
+.below-table p {
+  font-size: 10px;
+}
+.workspace-footer {
+  font-size: 10px;
+}
+.sidebar-bottom .disclosure p {
+  font-size: 11px;
+}
+.sidebar-bottom .disclosure strong {
+  font-size: 11px;
+}
+.sidebar-project strong {
+  font-size: 18px;
+}
+.sidebar-project a {
+  font-size: 12px;
+}
+.author {
+  font-size: 11px;
+}
+.table-panel td {
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+.page-intro h1 {
+  font-size: 39px;
+}
+.form-panel .field > span {
+  font-size: 13px;
+}
+.field small {
+  font-size: 11px;
+}
+.field input {
+  font-size: 15px;
+}
+.presets > button {
+  font-size: 11px;
+}
+.case-prose p {
+  font-size: 14px;
+}
+.case-prose h3 {
+  font-size: 25px;
+}
+.case-hero p {
+  font-size: 14px;
+}
+.check-list li {
+  font-size: 13px;
+}
+.next-list p {
+  font-size: 12px;
+}
+.panel > p,
+.section-title p {
+  font-size: 13px;
+}
+.note p {
+  font-size: 12px;
+}
+.language-switch {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  border: 1px solid #e0e8dd;
+  border-radius: 7px;
+  padding: 4px;
+  background: #fff;
+  flex-shrink: 0;
+}
+.language-switch > svg {
+  margin: 0 6px;
+  color: #8da080;
+}
+.language-switch button {
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  padding: 9px 12px;
+  font-size: 12px;
+  color: #72856b;
+}
+.language-switch button[aria-pressed="true"] {
+  background: #174f3b;
+  color: white;
+}
+.learn-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 21px;
+  align-items: stretch;
+}
+.tree-panel {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.tree-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid #e3eadd;
+  gap: 15px;
+}
+.tree-toolbar label {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.tree-toolbar select {
+  background: #fff;
+  border: 1px solid #d3dfcd;
+  border-radius: 5px;
+  padding: 9px 12px;
+  font-size: 12px;
+  color: #4d6945;
+  max-width: 180px;
+}
+.tree-toolbar > span {
+  font-size: 11px;
+  color: #809475;
+  white-space: nowrap;
+}
+.tree-canvas {
+  height: 430px;
+  overflow: auto;
+  background: #f6f9f3;
+  border-bottom: 1px solid #e4ebdd;
+  scrollbar-width: thin;
+}
+.tree-canvas svg {
+  min-width: 570px;
+  width: 100%;
+  display: block;
+}
+.node-question {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  fill: #244e31;
+}
+.node-detail {
+  font-size: 11px;
+  fill: #829874;
+}
+.alternative-label {
+  font-size: 10px;
+  fill: #95a38b;
+}
+.alternative-count {
+  font-size: 9px;
+  fill: #9ba992;
+}
+.branch-label {
+  font-size: 11px;
+  fill: #648246;
+}
+.future-node {
+  opacity: 0.5;
+}
+.tree-narration {
+  padding: 18px 23px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-height: 92px;
+  background: #fff;
+}
+.tree-narration strong {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #416a36;
+}
+.tree-narration span {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #819275;
+}
+.tree-controls {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 17px;
+  border-top: 1px solid #eef2e9;
+  margin-top: auto;
+}
+.tree-controls button {
+  font-size: 11px;
+  padding: 11px 12px;
+  white-space: normal;
+}
+.tree-controls .lime-button {
+  gap: 5px;
+}
+.forest-side {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+.forest-side > .panel {
+  padding: 22px;
+}
+.forest-side h2 {
+  font-size: 27px;
+}
+.forest-side .section-title p {
+  font-size: 12px;
+}
+.tree-profile {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tree-profile label {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 14px;
+  align-items: center;
+  font-size: 11px;
+  color: #718967;
+}
+.tree-profile input {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #d7e1d0;
+  background: #fcfdf9;
+  border-radius: 4px;
+  padding: 9px 10px;
+  color: #3d6233;
+  font-size: 12px;
+}
+.tree-profile input:disabled {
+  background: #f2f4ef;
+  color: #a6b09a;
+}
+.forest-summary > svg {
+  color: #8ca56d;
+  margin-bottom: 10px;
+}
+.forest-summary h2 {
+  font-size: 25px;
+}
+.forest-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 1px;
+  height: 100px;
+  margin-top: 24px;
+  padding-top: 5px;
+  border-bottom: 1px solid #d5e2c9;
+}
+.forest-bars > button {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: #bfdc88;
+  transition:
+    height 0.35s ease,
+    background 0.15s;
+}
+.forest-bars > button:hover,
+.forest-bars > button.chosen-tree {
+  background: #174f3b;
+}
+.forest-score {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  background: #e8f4d3;
+  border-radius: 7px;
+  padding: 16px;
+  margin-top: 17px;
+}
+.forest-score > span {
+  font-size: 12px;
+  color: #52743d;
+}
+.forest-score > strong {
+  font:
+    32px Georgia,
+    serif;
+  color: #244f2e;
+}
+.single-tree-score {
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+  color: #809670;
+  margin-top: 14px;
+}
+.single-tree-score b {
+  font-weight: 500;
+}
+.learning-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 33px 0;
+}
+.learning-steps section {
+  position: relative;
+  border-right: 1px solid #e5ecdf;
+  padding-right: 24px;
+}
+.learning-steps section:last-child {
+  border-right: 0;
+  padding-right: 0;
+}
+.learning-steps section > span {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  background: #d7ee9c;
+  border-radius: 50%;
+  font-size: 13px;
+  color: #45632f;
+  margin-bottom: 14px;
+}
+.learning-steps h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+.learning-steps p {
+  font-size: 13px;
+  line-height: 1.85;
+  color: #7d8e73;
+}
+.learn-technical {
+  border: 1px solid #dbe5d2;
+  border-radius: 7px;
+  padding: 18px 22px;
+}
+.learn-technical summary {
+  font-size: 14px;
+}
+.learn-technical p {
+  font-size: 13px;
+  max-width: 950px;
+  margin: 16px 0 0;
+  line-height: 1.85;
+}
+.learn-technical code {
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.learn-limit {
+  font-size: 11px;
+  color: #96a28c;
+  line-height: 1.8;
+  margin-top: 20px;
+  max-width: 1000px;
+}
+.hero-actions > button {
+  min-height: 43px;
+}
+.hero-actions .secondary {
+  background: #fff;
+}
+.overview-hero .primary {
+  font-size: 13px;
+}
+.case-summary > span {
+  font-size: 10px;
+}
+.case-summary dd {
+  font-size: 13px;
+}
+.overview-bottom {
+  background: #f7faf3;
+  border-top: 0;
+  padding: 20px 22px;
+  border-radius: 8px;
+}
+.overview-bottom > div {
+  font-size: 12px;
+}
+.overview-bottom .text-button {
+  font-size: 12px;
+}
+.two-col table td {
+  font-size: 12px;
+}
+.report-strip {
+  font-size: 12px;
+}
+.subtle {
+  font-size: 12px !important;
+}
+.stat strong,
+.big-probability {
+  font-variant-numeric: tabular-nums;
+}
+.table-heading .search {
+  max-width: 100%;
+}
+.table-heading .search input {
+  min-width: 0;
+}
+.hero-copy,
+.forest-side,
+.tree-panel {
+  min-width: 0;
+}
+@keyframes node-breathe {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+@keyframes trace-lines {
+  from {
+    stroke-dashoffset: 160;
+    opacity: 0.2;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+@keyframes sculpture-arrive {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@media (min-width: 1700px) {
+  .hero-copy h1 {
+    font-size: 56px;
+  }
+  .hero-art img {
+    height: 300px;
+  }
+  .hero-copy p {
+    font-size: 17px;
+  }
+  .overview-hero {
+    min-height: 310px;
+  }
+  .distribution svg {
+    height: 230px;
+  }
+  .forest-invitation h2 {
+    font-size: 38px;
+  }
+}
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 190px;
+  }
+  .workspace {
+    margin-left: 190px;
+    width: calc(100% - 190px);
+  }
+  main {
+    padding: 25px 24px 0;
+  }
+  .overview-hero {
+    gap: 15px;
+    grid-template-columns: 1.2fr 1fr;
+  }
+  .hero-copy h1 {
+    font-size: 39px;
+  }
+  .hero-copy p {
+    font-size: 14px;
+    margin: 15px 0 20px;
+  }
+  .hero-actions {
+    gap: 8px;
+  }
+  .hero-actions button {
+    font-size: 11px;
+    padding: 11px 12px;
+  }
+  .hero-art img {
+    height: 240px;
+  }
+  .forest-invitation {
+    padding: 23px;
+  }
+  .forest-invitation h2 {
+    font-size: 29px;
+  }
+  .stat strong {
+    font-size: 32px;
+  }
+  .stat small {
+    font-size: 10px;
+  }
+  .table-heading h2 {
+    font-size: 26px;
+  }
+  .learn-grid {
+    grid-template-columns: 1.4fr 1fr;
+    gap: 17px;
+  }
+  .tree-controls {
+    padding: 13px;
+    gap: 6px;
+  }
+  .tree-controls button {
+    font-size: 10px;
+    padding: 10px;
+  }
+  .forest-side > .panel {
+    padding: 18px;
+  }
+  .tree-profile label {
+    font-size: 10px;
+    gap: 9px;
+  }
+  .forest-side h2 {
+    font-size: 24px;
+  }
+  .page-intro h1 {
+    font-size: 34px;
+  }
+}
+@media (max-width: 960px) {
+  .overview-hero {
+    grid-template-columns: 1fr;
+    position: relative;
+    min-height: 300px;
+  }
+  .hero-copy {
+    max-width: 470px;
+  }
+  .hero-art {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 35%;
+    height: 230px;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+  .hero-copy p {
+    max-width: 380px;
+  }
+  .hero-copy h1 {
+    font-size: 42px;
+  }
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+  .forest-invitation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 25px;
+    min-height: 200px;
+  }
+  .forest-invitation h2 {
+    grid-column: 1;
+  }
+  .forest-invitation .forest-glyph {
+    grid-column: 2;
+    grid-row: 1/4;
+    max-height: 130px;
+    align-self: center;
+  }
+  .forest-invitation .lime-button {
+    grid-column: 1;
+    max-width: 260px;
+  }
+  .forest-invitation .action-note {
+    grid-column: 1;
+    margin-top: 0;
+  }
+  .learn-grid {
+    grid-template-columns: 1fr;
+  }
+  .forest-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 17px;
+    align-items: start;
+  }
+  .tree-canvas {
+    height: 410px;
+  }
+  .tree-profile label {
+    font-size: 11px;
+  }
+  .tree-controls button {
+    font-size: 12px;
+  }
+  .forest-summary h2 {
+    font-size: 25px;
+  }
+  .learning-steps {
+    gap: 18px;
+  }
+  .learning-steps h2 {
+    font-size: 23px;
+  }
+  .learning-steps p {
+    font-size: 12px;
+  }
+  .page-intro {
+    flex-wrap: wrap;
+  }
+  .language-switch {
+    margin-left: 0;
+  }
+  .stat strong {
+    font-size: 34px;
+  }
+  .stat small {
+    font-size: 10px;
+  }
+}
+@media (max-width: 680px) {
+  .sidebar {
+    width: 100%;
+    padding: 18px 17px 0;
+  }
+  .workspace {
+    margin: 0;
+    width: 100%;
+  }
+  .sidebar nav a {
+    font-size: 11px;
+    padding: 10px;
+  }
+  .sidebar nav {
+    margin-top: 16px;
+  }
+  .topbar {
+    height: 47px;
+    padding: 0 18px;
+  }
+  .topbar-right > a {
+    display: none;
+  }
+  .topbar-right > a:last-child {
+    display: flex;
+    font-size: 10px;
+  }
+  .online {
+    font-size: 9px;
+  }
+  .profile {
+    display: none;
+  }
+  main {
+    padding: 22px 18px 0;
+  }
+  .overview-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0;
+    margin-bottom: 24px;
+    padding-bottom: 22px;
+    gap: 0;
+  }
+  .hero-copy {
+    max-width: none;
+  }
+  .hero-copy h1 {
+    font-size: 39px;
+    line-height: 1.08;
+  }
+  .hero-copy p {
+    font-size: 14px;
+    margin: 17px 0 22px;
+    max-width: 330px;
+  }
+  .hero-actions {
+    gap: 9px;
+  }
+  .hero-actions button {
+    font-size: 11px;
+    padding: 11px 12px;
+  }
+  .hero-art {
+    position: relative;
+    right: auto;
+    top: auto;
+    opacity: 1;
+    width: 100%;
+    height: auto;
+    margin-top: 12px;
+  }
+  .hero-art img {
+    height: 190px;
+    object-fit: contain;
+    width: 100%;
+  }
+  .stats {
+    margin-bottom: 25px;
+    row-gap: 22px;
+  }
+  .stat strong {
+    font-size: 31px;
+  }
+  .stat > span {
+    font-size: 11px;
+  }
+  .stat small {
+    font-size: 9px;
+  }
+  .stat {
+    gap: 9px;
+  }
+  .distribution-panel {
+    padding: 22px 18px 17px;
+  }
+  .distribution-panel h2 {
+    font-size: 26px;
+  }
+  .distribution svg {
+    height: auto;
+  }
+  .distribution text {
+    font-size: 13px;
+  }
+  .distribution text.bar-count {
+    font-size: 13px;
+  }
+  .chart-legend {
+    font-size: 9px;
+    gap: 18px;
+  }
+  .forest-invitation {
+    display: flex;
+    gap: 0;
+    padding: 26px;
+    min-height: 315px;
+  }
+  .forest-invitation h2 {
+    font-size: 33px;
+  }
+  .forest-invitation .forest-glyph {
+    height: 125px;
+    max-height: none;
+    width: 100%;
+    margin: 12px 0 20px;
+  }
+  .forest-invitation .lime-button {
+    max-width: none;
+    font-size: 12px;
+  }
+  .forest-invitation .action-note {
+    margin-top: 15px;
+    font-size: 10px;
+  }
+  .table-heading h2 {
+    font-size: 26px;
+  }
+  .customer {
+    font-size: 12px;
+  }
+  .table-scroll td {
+    font-size: 12px;
+  }
+  .search input {
+    width: 100%;
+    font-size: 12px;
+  }
+  .table-heading p {
+    font-size: 11px;
+  }
+  .segments button {
+    font-size: 11px;
+    padding: 8px 9px;
+  }
+  .segments button span {
+    font-size: 9px;
+  }
+  .table-toolbar {
+    padding: 17px;
+  }
+  .table-panel td {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  .below-table p {
+    font-size: 10px;
+  }
+  .overview-bottom {
+    padding: 19px;
+    gap: 15px;
+  }
+  .overview-bottom > div,
+  .overview-bottom .text-button {
+    font-size: 11px;
+  }
+  .workspace-footer {
+    font-size: 9px;
+  }
+  .page-intro h1 {
+    font-size: 34px;
+  }
+  .page-intro p {
+    font-size: 13px;
+  }
+  .language-switch {
+    font-size: 11px;
+  }
+  .language-switch button {
+    font-size: 11px;
+    padding: 8px 10px;
+  }
+  .learn-grid {
+    gap: 18px;
+  }
+  .tree-toolbar {
+    padding: 14px;
+    gap: 10px;
+  }
+  .tree-toolbar label {
+    font-size: 11px;
+    gap: 7px;
+  }
+  .tree-toolbar select {
+    font-size: 11px;
+    padding: 8px;
+    max-width: 155px;
+  }
+  .tree-toolbar > span {
+    font-size: 10px;
+  }
+  .tree-canvas {
+    height: 380px;
+  }
+  .tree-canvas svg {
+    min-width: 570px;
+  }
+  .tree-narration {
+    padding: 18px;
+    min-height: 110px;
+  }
+  .tree-narration strong {
+    font-size: 12px;
+  }
+  .tree-narration span {
+    font-size: 11px;
+  }
+  .tree-controls {
+    padding: 14px 10px;
+    gap: 6px;
+  }
+  .tree-controls button {
+    font-size: 10px;
+    padding: 9px;
+    flex: 1;
+    gap: 5px;
+  }
+  .tree-controls button svg {
+    width: 13px;
+    flex-shrink: 0;
+  }
+  .forest-side {
+    display: flex;
+  }
+  .forest-side > .panel {
+    padding: 22px;
+  }
+  .forest-side h2 {
+    font-size: 27px;
+  }
+  .tree-profile label {
+    grid-template-columns: 1.5fr 1fr;
+    font-size: 12px;
+    gap: 12px;
+  }
+  .tree-profile input {
+    font-size: 13px;
+    padding: 10px;
+  }
+  .forest-summary h2 {
+    font-size: 28px;
+  }
+  .forest-bars {
+    height: 110px;
+  }
+  .forest-score {
+    font-size: 13px;
+  }
+  .forest-score strong {
+    font-size: 35px;
+  }
+  .learning-steps {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin: 28px 0;
+  }
+  .learning-steps section {
+    border-right: 0;
+    border-bottom: 1px solid #e3ecda;
+    padding: 0 0 24px;
+  }
+  .learning-steps section:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+  .learning-steps h2 {
+    font-size: 26px;
+  }
+  .learning-steps p {
+    font-size: 13px;
+  }
+  .learning-steps section > span {
+    float: left;
+    margin: 0 12px 0 0;
+    width: 27px;
+    height: 27px;
+  }
+  .learn-technical {
+    padding: 18px;
+  }
+  .learn-technical p {
+    font-size: 12px;
+  }
+  .learn-limit {
+    font-size: 10px;
+  }
+  .fields .field > span {
+    font-size: 11px;
+  }
+  .field small {
+    font-size: 10px;
+  }
+  .field input {
+    font-size: 14px;
+  }
+  .case-prose p {
+    font-size: 13px;
+  }
+  .two-col h2 {
+    font-size: 25px;
+  }
+  .primary,
+  .secondary {
+    font-size: 12px;
+  }
+  .case-summary dd {
+    font-size: 12px;
+  }
+  .case-hero p {
+    font-size: 13px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media (max-width: 680px) {
+  .topbar-right .online {
+    display: none;
+  }
+  .topbar-right > a[download] {
+    display: flex;
+    font-size: 10px;
+  }
+}

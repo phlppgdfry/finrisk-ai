@@ -19,6 +19,9 @@ jobs:
       - run: pip install -r requirements-lock.txt
       - run: npm --prefix frontend ci
       - run: python -m invoice_risk.train
+      - run: python -m scripts.report
+      - run: python -m scripts.export_browser
+      - run: npm --prefix frontend run test:parity
       - run: npm --prefix frontend run build
       - run: ruff check invoice_risk tests scripts
       - run: python -m pytest -q

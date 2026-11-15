@@ -1,13 +1,16 @@
 {
   "name": "finrisk-ai-workbench",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "tsc -b && vite build",
     "check": "tsc -b",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "build:pages": "tsc -b && VITE_STATIC_DEMO=true vite build --outDir dist-pages",
+    "test:parity": "node --test tests/forest-parity.test.mjs",
+    "test:pages": "playwright test --config playwright.pages.config.ts"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

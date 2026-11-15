@@ -1,5 +1,7 @@
 # Verification and design review
 
+**Historical record for version 1.0. For the public 1.1 showcase, see [V2_VERIFICATION.md](V2_VERIFICATION.md).**
+
 Verified locally on 15 November 2026. This file distinguishes executed checks from supplied deployment configuration.
 
 ## Executed checks

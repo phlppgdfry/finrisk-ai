@@ -1,3 +1,4 @@
+import { resource, STATIC_DEMO, REPOSITORY, asset } from "./runtime";
 import { useState } from "react";
 import { Upload, Download, AlertCircle, LoaderCircle } from "lucide-react";
 import { features, type Inputs, type Prediction, request, pct } from "./types";
@@ -84,9 +85,12 @@ export function ImportCSV() {
     <>
       <p>
         Score a numeric CSV with the saved Random Forest. Uploaded values are
-        processed in memory and are not added to the demonstration portfolio.
+        processed in memory and are not added to the demonstration portfolio.{" "}
+        {STATIC_DEMO
+          ? "On this site, scoring happens entirely in your browser; the CSV is not uploaded."
+          : "The local Python API performs the scoring."}
       </p>
-      <a className="text-button" href="/api/sample">
+      <a className="text-button" href={resource("sample")}>
         <Download size={15} /> Download sample CSV
       </a>
       <label className="upload-zone">

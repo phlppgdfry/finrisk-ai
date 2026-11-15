@@ -2,11 +2,21 @@
 
 **Payment risk, made clear.** An end-to-end ML portfolio by **Philippe Godfroy**: seeded invoice data → real Random Forest → honest evaluation → validated API → an interactive financial workbench.
 
-![FinRisk AI dashboard](docs/dashboard-desktop.png)
+**[Open the live GitHub Pages demo](https://phlppgdfry.github.io/finrisk-ai/)** · **[Explore a real tree](https://phlppgdfry.github.io/finrisk-ai/#learn)**
+
+![FinRisk AI dashboard](docs/v2-overview-desktop.png)
 
 The project asks a practical question: **which newly issued invoices deserve human follow-up first?** Explore 64 synthetic invoices, inspect a prediction, test a customer profile, score a numeric CSV batch, and challenge the model against simpler baselines.
 
 **Independent portfolio, built with AI assistance. Synthetic data only. No affiliation with BrightAnalytics, production-readiness claim, or validated financial performance.**
+
+## Public demo: real ML in the browser
+
+The GitHub Pages site runs all 220 exported trees directly in JavaScript. It uses the actual scikit-learn split thresholds and leaf probabilities, converts inputs with `Math.fround` to match sklearn float32 semantics, and averages the tree estimates. A parity test checks 824 Python reference cases including split-boundary values (maximum observed error about 2.22e-16). It is not a mock API or a rewritten scoring heuristic.
+
+Open **How it works** to step through any of the 220 real trees, play its decision path, edit the invoice profile and compare the tree with the forest average. Explanation text is available in Dutch and English.
+
+On the public site CSV scoring happens in browser memory. There is no remote Python server, account or invoice upload. The Python/FastAPI implementation remains available locally. Source ZIPs from GitHub contain source code; run the training commands below to regenerate artifacts.
 
 ## Start on your Mac
 
@@ -31,6 +41,7 @@ For UI development, run the API in one terminal and `npm --prefix frontend run d
 
 - **Overview:** actual portfolio totals, risk histogram, filterable collection priorities and CSV export.
 - **Invoices:** search, risk bands, sorting, accessible detail dialog and model sensitivity.
+- **How it works:** inspect actual tree nodes, thresholds, alternative branches and leaf estimates; 220 clickable per-tree estimates; NL/EN explanations.
 - **Scenario lab:** seven validated inputs, three presets, actual inference, first-run comparison and stale-result indicator.
 - **CSV scoring:** exact feature schema, 1–250 rows, numeric validation, scores export and a descriptive shift diagnostic. No database writes.
 - **Model report:** dummy/logistic baselines, confusion matrix, threshold exploration, permutation importance, reliability chart, test slices and artifact fingerprints.
@@ -112,7 +123,7 @@ npm --prefix frontend run test:e2e
 
 Python tests cover deterministic generation, disjoint chronological partitions, feature availability, schema validation, future-field rejection, batch limits, score consistency, threshold provenance, exports and artifact integrity. Browser QA covers filters, sorting, details, scenario comparisons, CSV success/error, model slider and responsive pages. See [verification](docs/VERIFICATION.md) for actual results and limits.
 
-The CI definition trains and checks from source on Python 3.13 / Node 22 and stores evaluation artifacts. A workflow file is supplied; a remote CI run is not claimed.
+The CI and Pages definitions train and check from source on Python 3.13 / Node 22 and stores evaluation artifacts. The Pages workflow gates publication on Python checks, browser/Python parity and desktop/mobile browser tests.
 
 Container option:
 
@@ -132,4 +143,17 @@ Compose maps **127.0.0.1:8011**, uses a non-root user, read-only filesystem and 
 
 A job-worthy next step is to reproduce the run, change one component yourself, explain why logistic regression wins, and show how the error trade-off changes. Do not claim independent production ML experience just because this demo exists.
 
-MIT licensed. No credentials or paid AI services required.
+MIT licensed. No credentials or paid AI services required. The generated illustration is a visual metaphor, not customer or model evidence.
+
+## Publish and reproduce the static site
+
+```sh
+make train
+make pages
+npm --prefix frontend exec playwright install chromium
+npm --prefix frontend run test:pages
+```
+
+`make train` also exports browser data. `make pages` produces `frontend/dist-pages`. The Actions workflow exports a fresh matching forest and report before every deployment. Relative Vite base paths keep asset and download links valid below `/finrisk-ai/`. No secret API keys are needed.
+
+Read [the next-step roadmap in Dutch](docs/ROADMAP_NL.md) for the most valuable improvements: real-data validation, operational baselines, calibrated scores and a measured pilot.
