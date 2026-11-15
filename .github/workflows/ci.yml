@@ -1,0 +1,37 @@
+name: FinRisk quality checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: pip install -r requirements-lock.txt
+      - run: npm --prefix frontend ci
+      - run: python -m invoice_risk.train
+      - run: npm --prefix frontend run build
+      - run: ruff check invoice_risk tests scripts
+      - run: python -m pytest -q
+      - run: npx --prefix frontend playwright install --with-deps chromium
+      - run: npm --prefix frontend run test:e2e
+        env:
+          FINRISK_PYTHON: python
+      - run: python -m scripts.report
+      - run: python -m scripts.package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: finrisk-evidence
+          path: |
+            artifacts/report.json
+            docs/evaluation.html
+            dist/finrisk-ai-source.zip

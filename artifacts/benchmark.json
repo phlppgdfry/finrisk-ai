@@ -1,0 +1,8 @@
+{
+  "requests": 50,
+  "warmup": 5,
+  "concurrency": 1,
+  "p50_ms": 28.72,
+  "p95_ms": 38.58,
+  "scope": "Local loopback HTTP; includes 8 inferences for reference sensitivities. Hardware-dependent."
+}

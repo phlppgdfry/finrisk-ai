@@ -1,0 +1,11 @@
+.venv
+.git
+frontend/node_modules
+.pytest_cache
+.ruff_cache
+**/__pycache__
+artifacts/*.joblib
+.DS_Store
+
+frontend/test-results
+frontend/playwright-report
