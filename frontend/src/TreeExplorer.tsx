@@ -274,6 +274,66 @@ export function TreeExplorer() {
           ))}
         </div>
       </div>
+      <Panel className="tree-primer">
+        <h2>
+          {language === "nl"
+            ? "Waarom verschillen die 220 bomen?"
+            : "Why are the 220 trees different?"}
+        </h2>
+        <p>
+          {language === "nl"
+            ? "Elke boom is een volledig model, geen specialist voor één kolom. Hij trekt 4.320 trainingsrijen mét teruglegging: sommige rijen komen meerdere keren voor, andere niet. Bij een splitsing bekijkt hij normaal twee willekeurig gekozen kandidaatkenmerken uit onze zeven en zoekt een grens die de groepen zuiverder maakt. Verschillende steekproeven en kandidaten leveren andere vragen en eindbladen op."
+            : "Every tree is a complete model, not a specialist for one column. It draws 4,320 training rows with replacement, so some appear repeatedly and others are absent. At a split it normally considers two random candidate features from our seven and finds a cutoff that makes the child groups purer. Different samples and candidates produce different questions and leaves."}
+        </p>
+        <div className="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>{c.tree}</th>
+                <th>{language === "nl" ? "Eerste vraag" : "First question"}</th>
+                <th>
+                  {language === "nl"
+                    ? "Unieke trainingsrijen"
+                    : "Distinct training rows"}
+                </th>
+                <th>{language === "nl" ? "Knopen" : "Nodes"}</th>
+                <th>
+                  {language === "nl"
+                    ? "Kans voor dit profiel"
+                    : "Estimate for this profile"}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {[0, 1, 2].map((i) => (
+                <tr key={i}>
+                  <td>{i + 1}</td>
+                  <td>
+                    {language === "nl"
+                      ? nlNames[forest.features[forest.trees[i].feature[0]]]
+                      : forest.labels[
+                          forest.features[forest.trees[i].feature[0]]
+                        ]}{" "}
+                    ≤{" "}
+                    {formatFeature(
+                      forest.features[forest.trees[i].feature[0]],
+                      forest.trees[i].threshold[0],
+                    )}
+                  </td>
+                  <td>{forest.trees[i].samples[0]}</td>
+                  <td>{forest.trees[i].left.length}</td>
+                  <td>{pct(scores[i], 1)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p>
+          {language === "nl"
+            ? "220 is een ingestelde modelparameter, geen aantal soorten facturen en geen bewezen optimum. Elke boom kan hetzelfde kenmerk meermaals gebruiken. Voor dit profiel middelen we alle 220 kansen; de spreiding ertussen is geen betrouwbaarheidsinterval. Bij onvoldoende geldige splitsingen kan de software meer kandidaatkenmerken onderzoeken."
+            : "220 is a configured model parameter, not a number of invoice types or a proven optimum. A tree can reuse the same feature. We average all 220 estimates; their spread is not a confidence interval. The split search can inspect more features when needed to find a valid partition."}
+        </p>
+      </Panel>
       <div className="learn-grid">
         <Panel className="tree-panel">
           <div className="tree-toolbar">

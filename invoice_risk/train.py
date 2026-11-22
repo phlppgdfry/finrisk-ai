@@ -22,6 +22,7 @@ from sklearn.metrics import (
     confusion_matrix,
 )
 from sklearn.inspection import permutation_importance
+from invoice_risk.decisions import capacity_report
 from invoice_risk.data import ROOT, FEATURES, LABELS, generate, split
 
 
@@ -124,6 +125,10 @@ def train():
                 **evaluate(te.late, dummy.predict_proba(te[FEATURES])[:, 1], 0.5),
             },
             "Logistic regression": {"threshold": lt, **evaluate(te.late, lp, lt)},
+        },
+        "capacity_evaluation": {
+            "validation": capacity_report(va, val_p, lvp),
+            "test": capacity_report(te, p, lp),
         },
         "thresholds": thresholds,
         "calibration": bins,

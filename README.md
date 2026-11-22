@@ -157,3 +157,11 @@ npm --prefix frontend run test:pages
 `make train` also exports browser data. `make pages` produces `frontend/dist-pages`. The Actions workflow exports a fresh matching forest and report before every deployment. Relative Vite base paths keep asset and download links valid below `/finrisk-ai/`. No secret API keys are needed.
 
 Read [the next-step roadmap in Dutch](docs/ROADMAP_NL.md) for the most valuable improvements: real-data validation, operational baselines, calibrated scores and a measured pilot.
+
+## Capacity-aware evaluation (November 2026 update)
+
+Model report now compares top-5/10/20/50/100 prioritisation using Random Forest, logistic regression, highest amount and historical late rate. Validation and final test pools are separate. Outputs include precision@k, recall@k, lift, false alarms and indicative Wilson intervals. A random-selection expectation supplies context. This is offline ranking evidence on synthetic records; no collected revenue or causal benefit is implied.
+
+How it works now compares actual tree structures and explains bootstrap sampling, feature subsampling, the configured 220-tree count and probability averaging.
+
+Real-data status remains **not externally validated**. See [source review and admission contract](docs/REAL_DATA.md). A working local frozen-model evaluation command is supplied in `scripts/validate_real.py`. Authorised input data, feature provenance and label maturity must be provided before real-data validation can be completed.

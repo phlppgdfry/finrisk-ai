@@ -1,3 +1,4 @@
+import { DecisionLab } from "./DecisionLab";
 import { resource, STATIC_DEMO, REPOSITORY, asset } from "./runtime";
 import { useState } from "react";
 import { Download, ArrowUpRight, Activity, Info } from "lucide-react";
@@ -35,6 +36,7 @@ export function ModelReport({ report: r }: { report: Report }) {
           <Download size={16} /> Model card
         </a>
       </div>
+      <DecisionLab report={r} />
       <div className="report-strip">
         <Activity size={18} />
         <span>Random Forest · 220 trees</span>

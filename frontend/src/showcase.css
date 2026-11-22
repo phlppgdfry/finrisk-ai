@@ -1213,3 +1213,87 @@ main {
   min-width: 700px;
   max-width: none;
 }
+.decision-lab {
+  margin: 0 0 30px;
+}
+.decision-controls {
+  display: flex;
+  gap: 24px;
+  align-items: end;
+  flex-wrap: wrap;
+  margin: 24px 0;
+}
+.decision-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 12px;
+  color: #57734d;
+}
+.decision-controls select {
+  padding: 10px;
+  border: 1px solid #d7e3cf;
+  border-radius: 6px;
+  background: #fff;
+  color: #31592d;
+  font-size: 12px;
+}
+.decision-controls p {
+  font-size: 12px;
+  max-width: 280px;
+}
+.capacity-bar {
+  height: 5px;
+  width: 90px;
+  background: #edf2e7;
+  margin: 5px 0;
+}
+.capacity-bar span {
+  display: block;
+  height: 100%;
+  background: #729951;
+}
+.decision-lab td small {
+  font-size: 10px;
+  color: #8b9c7d;
+}
+.real-data-status {
+  background: #f5f8ee;
+  border: 1px solid #dfe7d5;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 25px;
+}
+.real-data-status p {
+  font-size: 13px;
+  margin: 10px 0;
+}
+.tree-primer {
+  margin-bottom: 25px;
+}
+.tree-primer > p {
+  max-width: 1050px;
+  line-height: 1.85;
+}
+.tree-primer table {
+  margin: 20px 0;
+}
+.decision-lab > p {
+  margin-top: 18px;
+  font-size: 13px;
+}
+@media (max-width: 680px) {
+  .decision-controls {
+    gap: 15px;
+  }
+  .decision-controls select {
+    max-width: 290px;
+  }
+  .tree-primer h2 {
+    font-size: 26px;
+  }
+  .tree-primer p,
+  .real-data-status p {
+    font-size: 12px;
+  }
+}

@@ -52,3 +52,24 @@ test("a real tree can be stepped through and responds to the invoice", async ({
     ),
   ).toBe(true);
 });
+
+test("capacity evaluation changes budget and preserves real-data status", async ({
+  page,
+}) => {
+  await page.goto("./#model");
+  await expect(
+    page.getByRole("heading", { name: "Welke tien facturen eerst?" }),
+  ).toBeVisible();
+  await expect(page.locator(".decision-lab tbody tr")).toHaveCount(4);
+  await page.getByLabel("Opvolgcapaciteit", { exact: true }).selectOption("20");
+  await expect(page.locator(".decision-lab")).toContainText("Precision@20");
+  await page.getByLabel("Evaluatieset", { exact: true }).selectOption("test");
+  await expect(
+    page.getByRole("heading", { name: "Echte data: nog niet gevalideerd" }),
+  ).toBeVisible();
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth + 1,
+    ),
+  ).toBe(true);
+});

@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "seed": 42,
-  "trained_at": "2026-11-15T13:54:37.169008+00:00",
+  "trained_at": "2026-11-22T15:43:21.878441+00:00",
   "data_sha256": "8416624c05bf79d61ea47eadb7b6629b3c4605e7a5d7db92cf233b57caf88513",
   "model_sha256": "6a142be26013eeeedaa8dbeaa373e5034d64312c737411d2254dfa107e330dc9",
   "python_version": "3.13.18",
@@ -78,6 +78,600 @@
       "tp": 381,
       "toy_cost": 777,
       "flagged": 858
+    }
+  },
+  "capacity_evaluation": {
+    "validation": {
+      "rows": 1440,
+      "prevalence": 0.28888888888888886,
+      "capacities": [
+        {
+          "k": 5,
+          "random_expected_late": 1.4444444444444442,
+          "strategies": {
+            "Random Forest": {
+              "k": 5,
+              "late_found": 5,
+              "false_alarms": 0,
+              "precision": 1.0,
+              "recall": 0.01201923076923077,
+              "lift": 3.4615384615384617,
+              "precision_interval": [
+                0.5655085052479191,
+                1.0000000000000002
+              ],
+              "late_amount_selected": 10892.44
+            },
+            "Logistic regression": {
+              "k": 5,
+              "late_found": 4,
+              "false_alarms": 1,
+              "precision": 0.8,
+              "recall": 0.009615384615384616,
+              "lift": 2.7692307692307696,
+              "precision_interval": [
+                0.3755282641185388,
+                0.9637768390302125
+              ],
+              "late_amount_selected": 52631.96
+            },
+            "Highest amount": {
+              "k": 5,
+              "late_found": 2,
+              "false_alarms": 3,
+              "precision": 0.4,
+              "recall": 0.004807692307692308,
+              "lift": 1.3846153846153848,
+              "precision_interval": [
+                0.1176182311592533,
+                0.769280067791163
+              ],
+              "late_amount_selected": 94872.95
+            },
+            "Historical late rate": {
+              "k": 5,
+              "late_found": 4,
+              "false_alarms": 1,
+              "precision": 0.8,
+              "recall": 0.009615384615384616,
+              "lift": 2.7692307692307696,
+              "precision_interval": [
+                0.3755282641185388,
+                0.9637768390302125
+              ],
+              "late_amount_selected": 52457.64
+            }
+          }
+        },
+        {
+          "k": 10,
+          "random_expected_late": 2.8888888888888884,
+          "strategies": {
+            "Random Forest": {
+              "k": 10,
+              "late_found": 10,
+              "false_alarms": 0,
+              "precision": 1.0,
+              "recall": 0.02403846153846154,
+              "lift": 3.4615384615384617,
+              "precision_interval": [
+                0.7224598312333834,
+                1.0
+              ],
+              "late_amount_selected": 34278.87
+            },
+            "Logistic regression": {
+              "k": 10,
+              "late_found": 9,
+              "false_alarms": 1,
+              "precision": 0.9,
+              "recall": 0.021634615384615384,
+              "lift": 3.115384615384616,
+              "precision_interval": [
+                0.5958436145024278,
+                0.9821242504842788
+              ],
+              "late_amount_selected": 112976.25
+            },
+            "Highest amount": {
+              "k": 10,
+              "late_found": 5,
+              "false_alarms": 5,
+              "precision": 0.5,
+              "recall": 0.01201923076923077,
+              "lift": 1.7307692307692308,
+              "precision_interval": [
+                0.23658959361548731,
+                0.7634104063845126
+              ],
+              "late_amount_selected": 215554.78
+            },
+            "Historical late rate": {
+              "k": 10,
+              "late_found": 9,
+              "false_alarms": 1,
+              "precision": 0.9,
+              "recall": 0.021634615384615384,
+              "lift": 3.115384615384616,
+              "precision_interval": [
+                0.5958436145024278,
+                0.9821242504842788
+              ],
+              "late_amount_selected": 72152.84
+            }
+          }
+        },
+        {
+          "k": 20,
+          "random_expected_late": 5.777777777777777,
+          "strategies": {
+            "Random Forest": {
+              "k": 20,
+              "late_found": 18,
+              "false_alarms": 2,
+              "precision": 0.9,
+              "recall": 0.04326923076923077,
+              "lift": 3.115384615384616,
+              "precision_interval": [
+                0.6989617935882066,
+                0.9721341060158468
+              ],
+              "late_amount_selected": 77948.57999999999
+            },
+            "Logistic regression": {
+              "k": 20,
+              "late_found": 19,
+              "false_alarms": 1,
+              "precision": 0.95,
+              "recall": 0.04567307692307692,
+              "lift": 3.2884615384615388,
+              "precision_interval": [
+                0.7638641064874331,
+                0.9911187805671268
+              ],
+              "late_amount_selected": 170866.99
+            },
+            "Highest amount": {
+              "k": 20,
+              "late_found": 6,
+              "false_alarms": 14,
+              "precision": 0.3,
+              "recall": 0.014423076923076924,
+              "lift": 1.0384615384615385,
+              "precision_interval": [
+                0.14547527396899385,
+                0.5189767762289793
+              ],
+              "late_amount_selected": 245253.51
+            },
+            "Historical late rate": {
+              "k": 20,
+              "late_found": 19,
+              "false_alarms": 1,
+              "precision": 0.95,
+              "recall": 0.04567307692307692,
+              "lift": 3.2884615384615388,
+              "precision_interval": [
+                0.7638641064874331,
+                0.9911187805671268
+              ],
+              "late_amount_selected": 136140.59999999998
+            }
+          }
+        },
+        {
+          "k": 50,
+          "random_expected_late": 14.444444444444443,
+          "strategies": {
+            "Random Forest": {
+              "k": 50,
+              "late_found": 44,
+              "false_alarms": 6,
+              "precision": 0.88,
+              "recall": 0.10576923076923077,
+              "lift": 3.0461538461538464,
+              "precision_interval": [
+                0.7619492111337642,
+                0.9438247628937535
+              ],
+              "late_amount_selected": 255681.24999999997
+            },
+            "Logistic regression": {
+              "k": 50,
+              "late_found": 46,
+              "false_alarms": 4,
+              "precision": 0.92,
+              "recall": 0.11057692307692307,
+              "lift": 3.184615384615385,
+              "precision_interval": [
+                0.8116149745493629,
+                0.9684509967442093
+              ],
+              "late_amount_selected": 367752.81
+            },
+            "Highest amount": {
+              "k": 50,
+              "late_found": 18,
+              "false_alarms": 32,
+              "precision": 0.36,
+              "recall": 0.04326923076923077,
+              "lift": 1.2461538461538462,
+              "precision_interval": [
+                0.24138562967182875,
+                0.49859237989698046
+              ],
+              "late_amount_selected": 539289.52
+            },
+            "Historical late rate": {
+              "k": 50,
+              "late_found": 42,
+              "false_alarms": 8,
+              "precision": 0.84,
+              "recall": 0.10096153846153846,
+              "lift": 2.907692307692308,
+              "precision_interval": [
+                0.7148551903823401,
+                0.9166267863791231
+              ],
+              "late_amount_selected": 242095.88
+            }
+          }
+        },
+        {
+          "k": 100,
+          "random_expected_late": 28.888888888888886,
+          "strategies": {
+            "Random Forest": {
+              "k": 100,
+              "late_found": 84,
+              "false_alarms": 16,
+              "precision": 0.84,
+              "recall": 0.20192307692307693,
+              "lift": 2.907692307692308,
+              "precision_interval": [
+                0.7557955544110557,
+                0.8990479765052628
+              ],
+              "late_amount_selected": 513349.25999999995
+            },
+            "Logistic regression": {
+              "k": 100,
+              "late_found": 83,
+              "false_alarms": 17,
+              "precision": 0.83,
+              "recall": 0.19951923076923078,
+              "lift": 2.873076923076923,
+              "precision_interval": [
+                0.7445181876635703,
+                0.8910652394022684
+              ],
+              "late_amount_selected": 513552.19
+            },
+            "Highest amount": {
+              "k": 100,
+              "late_found": 33,
+              "false_alarms": 67,
+              "precision": 0.33,
+              "recall": 0.07932692307692307,
+              "lift": 1.1423076923076925,
+              "precision_interval": [
+                0.24562983793895452,
+                0.4269483966028862
+              ],
+              "late_amount_selected": 790137.1599999999
+            },
+            "Historical late rate": {
+              "k": 100,
+              "late_found": 71,
+              "false_alarms": 29,
+              "precision": 0.71,
+              "recall": 0.17067307692307693,
+              "lift": 2.457692307692308,
+              "precision_interval": [
+                0.6146092505999207,
+                0.7898529302601586
+              ],
+              "late_amount_selected": 429045.9700000001
+            }
+          }
+        }
+      ]
+    },
+    "test": {
+      "rows": 1440,
+      "prevalence": 0.30625,
+      "capacities": [
+        {
+          "k": 5,
+          "random_expected_late": 1.53125,
+          "strategies": {
+            "Random Forest": {
+              "k": 5,
+              "late_found": 5,
+              "false_alarms": 0,
+              "precision": 1.0,
+              "recall": 0.011337868480725623,
+              "lift": 3.265306122448979,
+              "precision_interval": [
+                0.5655085052479191,
+                1.0000000000000002
+              ],
+              "late_amount_selected": 33288.77
+            },
+            "Logistic regression": {
+              "k": 5,
+              "late_found": 5,
+              "false_alarms": 0,
+              "precision": 1.0,
+              "recall": 0.011337868480725623,
+              "lift": 3.265306122448979,
+              "precision_interval": [
+                0.5655085052479191,
+                1.0000000000000002
+              ],
+              "late_amount_selected": 28089.71
+            },
+            "Highest amount": {
+              "k": 5,
+              "late_found": 2,
+              "false_alarms": 3,
+              "precision": 0.4,
+              "recall": 0.0045351473922902496,
+              "lift": 1.3061224489795917,
+              "precision_interval": [
+                0.1176182311592533,
+                0.769280067791163
+              ],
+              "late_amount_selected": 100000.0
+            },
+            "Historical late rate": {
+              "k": 5,
+              "late_found": 5,
+              "false_alarms": 0,
+              "precision": 1.0,
+              "recall": 0.011337868480725623,
+              "lift": 3.265306122448979,
+              "precision_interval": [
+                0.5655085052479191,
+                1.0000000000000002
+              ],
+              "late_amount_selected": 17700.79
+            }
+          }
+        },
+        {
+          "k": 10,
+          "random_expected_late": 3.0625,
+          "strategies": {
+            "Random Forest": {
+              "k": 10,
+              "late_found": 9,
+              "false_alarms": 1,
+              "precision": 0.9,
+              "recall": 0.02040816326530612,
+              "lift": 2.9387755102040813,
+              "precision_interval": [
+                0.5958436145024278,
+                0.9821242504842788
+              ],
+              "late_amount_selected": 54966.31
+            },
+            "Logistic regression": {
+              "k": 10,
+              "late_found": 10,
+              "false_alarms": 0,
+              "precision": 1.0,
+              "recall": 0.022675736961451247,
+              "lift": 3.265306122448979,
+              "precision_interval": [
+                0.7224598312333834,
+                1.0
+              ],
+              "late_amount_selected": 52685.200000000004
+            },
+            "Highest amount": {
+              "k": 10,
+              "late_found": 4,
+              "false_alarms": 6,
+              "precision": 0.4,
+              "recall": 0.009070294784580499,
+              "lift": 1.3061224489795917,
+              "precision_interval": [
+                0.16817758120350967,
+                0.6873304525498135
+              ],
+              "late_amount_selected": 183717.78
+            },
+            "Historical late rate": {
+              "k": 10,
+              "late_found": 10,
+              "false_alarms": 0,
+              "precision": 1.0,
+              "recall": 0.022675736961451247,
+              "lift": 3.265306122448979,
+              "precision_interval": [
+                0.7224598312333834,
+                1.0
+              ],
+              "late_amount_selected": 33964.0
+            }
+          }
+        },
+        {
+          "k": 20,
+          "random_expected_late": 6.125,
+          "strategies": {
+            "Random Forest": {
+              "k": 20,
+              "late_found": 19,
+              "false_alarms": 1,
+              "precision": 0.95,
+              "recall": 0.04308390022675737,
+              "lift": 3.10204081632653,
+              "precision_interval": [
+                0.7638641064874331,
+                0.9911187805671268
+              ],
+              "late_amount_selected": 176948.84999999998
+            },
+            "Logistic regression": {
+              "k": 20,
+              "late_found": 19,
+              "false_alarms": 1,
+              "precision": 0.95,
+              "recall": 0.04308390022675737,
+              "lift": 3.10204081632653,
+              "precision_interval": [
+                0.7638641064874331,
+                0.9911187805671268
+              ],
+              "late_amount_selected": 128440.07
+            },
+            "Highest amount": {
+              "k": 20,
+              "late_found": 12,
+              "false_alarms": 8,
+              "precision": 0.6,
+              "recall": 0.027210884353741496,
+              "lift": 1.9591836734693875,
+              "precision_interval": [
+                0.3865779423152061,
+                0.7811960325858074
+              ],
+              "late_amount_selected": 443704.94999999995
+            },
+            "Historical late rate": {
+              "k": 20,
+              "late_found": 17,
+              "false_alarms": 3,
+              "precision": 0.85,
+              "recall": 0.03854875283446712,
+              "lift": 2.775510204081632,
+              "precision_interval": [
+                0.6395767041130426,
+                0.9476322080405041
+              ],
+              "late_amount_selected": 57176.62
+            }
+          }
+        },
+        {
+          "k": 50,
+          "random_expected_late": 15.312500000000002,
+          "strategies": {
+            "Random Forest": {
+              "k": 50,
+              "late_found": 45,
+              "false_alarms": 5,
+              "precision": 0.9,
+              "recall": 0.10204081632653061,
+              "lift": 2.9387755102040813,
+              "precision_interval": [
+                0.7863950966521162,
+                0.956524876008429
+              ],
+              "late_amount_selected": 334955.51
+            },
+            "Logistic regression": {
+              "k": 50,
+              "late_found": 45,
+              "false_alarms": 5,
+              "precision": 0.9,
+              "recall": 0.10204081632653061,
+              "lift": 2.9387755102040813,
+              "precision_interval": [
+                0.7863950966521162,
+                0.956524876008429
+              ],
+              "late_amount_selected": 372526.44999999995
+            },
+            "Highest amount": {
+              "k": 50,
+              "late_found": 27,
+              "false_alarms": 23,
+              "precision": 0.54,
+              "recall": 0.061224489795918366,
+              "lift": 1.763265306122449,
+              "precision_interval": [
+                0.40398634328388083,
+                0.6703056539821737
+              ],
+              "late_amount_selected": 819097.2799999999
+            },
+            "Historical late rate": {
+              "k": 50,
+              "late_found": 37,
+              "false_alarms": 13,
+              "precision": 0.74,
+              "recall": 0.08390022675736962,
+              "lift": 2.4163265306122446,
+              "precision_interval": [
+                0.6044657801100008,
+                0.8412862034863262
+              ],
+              "late_amount_selected": 210086.25999999998
+            }
+          }
+        },
+        {
+          "k": 100,
+          "random_expected_late": 30.625000000000004,
+          "strategies": {
+            "Random Forest": {
+              "k": 100,
+              "late_found": 85,
+              "false_alarms": 15,
+              "precision": 0.85,
+              "recall": 0.1927437641723356,
+              "lift": 2.775510204081632,
+              "precision_interval": [
+                0.7671626666784216,
+                0.906940968088377
+              ],
+              "late_amount_selected": 478603.75
+            },
+            "Logistic regression": {
+              "k": 100,
+              "late_found": 84,
+              "false_alarms": 16,
+              "precision": 0.84,
+              "recall": 0.19047619047619047,
+              "lift": 2.7428571428571424,
+              "precision_interval": [
+                0.7557955544110557,
+                0.8990479765052628
+              ],
+              "late_amount_selected": 534969.0
+            },
+            "Highest amount": {
+              "k": 100,
+              "late_found": 48,
+              "false_alarms": 52,
+              "precision": 0.48,
+              "recall": 0.10884353741496598,
+              "lift": 1.5673469387755101,
+              "precision_interval": [
+                0.38464384320080547,
+                0.5768359490982345
+              ],
+              "late_amount_selected": 1172822.6300000001
+            },
+            "Historical late rate": {
+              "k": 100,
+              "late_found": 75,
+              "false_alarms": 25,
+              "precision": 0.75,
+              "recall": 0.17006802721088435,
+              "lift": 2.4489795918367343,
+              "precision_interval": [
+                0.6569535362992417,
+                0.8245490599627573
+              ],
+              "late_amount_selected": 458264.82
+            }
+          }
+        }
+      ]
     }
   },
   "thresholds": [
@@ -1570,7 +2164,7 @@
       "count": 96
     },
     {
-      "predicted": 0.6468289837728929,
+      "predicted": 0.6468289837728928,
       "observed": 0.676056338028169,
       "count": 71
     },
@@ -1669,7 +2263,7 @@
       "rows": 91,
       "roc_auc": 0.8424036281179139,
       "pr_auc": 0.7103685947733654,
-      "brier": 0.16063058436144448,
+      "brier": 0.1606305843614445,
       "precision": 0.3783783783783784,
       "recall": 1.0,
       "f1": 0.5490196078431373,
