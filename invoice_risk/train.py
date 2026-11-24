@@ -77,7 +77,9 @@ def train():
     importance = permutation_importance(
         model, va[FEATURES], va.late, scoring="roc_auc", n_repeats=5, random_state=42, n_jobs=2
     )
-    checksum = hashlib.sha256(data.to_csv(index=False).encode()).hexdigest()
+    training_csv = data.to_csv(index=False)
+    (out / "training-data.csv").write_text(training_csv)
+    checksum = hashlib.sha256(training_csv.encode()).hexdigest()
     joblib.dump(model, out / "model.joblib")
     artifact_sha = hashlib.sha256((out / "model.joblib").read_bytes()).hexdigest()
     bins = []

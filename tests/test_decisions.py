@@ -22,6 +22,12 @@ def records():
         [
             dict(
                 invoice_id=str(i),
+                customer_id="C1",
+                payment_status="paid",
+                currency="EUR",
+                paid_amount=4500,
+                credit_amount=0,
+                disputed=False,
                 issued_at="2025-01-01",
                 features_as_of="2025-01-01",
                 due_at="2025-01-31",

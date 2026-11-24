@@ -75,4 +75,10 @@ The concept is a design reference only. All shipped navigation, text, controls, 
 
 ## Remaining boundaries
 
-No public site or GitHub repository has been published. The CI workflow is supplied but no remote GitHub Actions run is claimed. Chrome/Chromium was tested; Safari and Firefox were not. No automated accessibility conformance audit was performed. Docker build and in-container tests do not replace load/security testing or real-data evaluation. All financial records are synthetic.
+The public repository and GitHub Pages site are published at phlppgdfry/finrisk-ai. New changes are gated by CI and the Pages workflow. Chrome/Chromium was tested; Safari and Firefox were not. No automated accessibility conformance audit was performed. Docker build and in-container tests do not replace load/security testing or real-data evaluation. All financial records are synthetic.
+
+## Operational release v1.2.0 — 24 November 2026
+
+Local checks: 38 Python tests passed, Ruff and TypeScript passed, 824 Python/browser predictions matched (maximum absolute error 2.22e-16), 18 static-site and 18 local API-backed browser tests passed across desktop Chromium and mobile Chromium emulation. Coverage includes dated-ledger history reconstruction and rejection of plausible but mismatched aggregates, unknown settlement status, partials/credits, customer cooldown, capacity, release corruption/overwrite rejection, daily page controls and responsive width. The model, original synthetic training CSV and evaluation report fingerprints agree.
+
+No real-data validation or reminder-effect measurement was performed. A local validator and descriptive pilot reporter are tools for that future work; their existence is not evidence of successful finance deployment. Safari/Firefox and actual mobile hardware were not tested in this update.

@@ -46,3 +46,13 @@ Schrijf een kort beslislogboek: probleem, alternatieven, gekozen aanpak, tests, 
 - Interactieve inspectie van werkelijke beslissingspaden, in Nederlands en Engels.
 - Een verzorgd ontwerp, gegenereerde illustratie en animaties met ondersteuning voor minder beweging.
 - CSV-scoring zonder upload op de publieke site.
+
+## Gerealiseerd in versie 1.2
+
+- Dagelijkse replay van 15 dagen met herhaalde klanten, tien-dossierlimiet en afkoeling.
+- Expliciete verwerking van onbekende status, deelbetalingen, credits, disputes, valuta en nieuwe klanten.
+- Dated-ledgercontrole van historische kenmerken voor lokale externe evaluatie.
+- Klantniveau-toewijzing en beschrijvende cash/tijd-rapportage voor een toekomstige pilot.
+- Vaste model-, dataset-, rapport- en browserrelease met checksumcontrole; publicatie traint niet opnieuw.
+
+Open blijven: passende toegelaten bedrijfsdata, echte integratie en gebruikersobservaties, een correct uitgevoerde pilot en bewijs van effect. Zie [operationeel contract](OPERATIONS.md).

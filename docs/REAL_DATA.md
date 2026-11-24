@@ -12,11 +12,13 @@ These are scoped findings about the reviewed sources, not a claim that no suitab
 
 ## Working local validation route
 
-`python -m scripts.validate_real PATH.csv --as-of YYYY-MM-DD --source "export reference" --rights "permission/licence reference" --output /private/tmp/finrisk-audit.json`
+`python -m scripts.validate_real PATH.csv --ledger PRIVATE-LEDGER.json --as-of YYYY-MM-DD --source "export reference" --rights "permission/licence reference" --output /private/tmp/finrisk-audit.json`
 
-Required columns: the seven features in DATA_CONTRACT.md plus invoice_id, issued_at, features_as_of, due_at, paid_at. Dates must be parseable. IDs must be unique. Features must satisfy the model domain; features_as_of cannot exceed issued_at. Every due_at must precede the evaluation cutoff. Paid dates cannot precede issuance. The label is paid_at > due_at; an unpaid invoice past due is late. Both classes must be present for ROC-AUC. This is a fixed-model external test, not retraining or a licence-verification service.
+Required columns: seven features in DATA_CONTRACT.md plus invoice_id, customer_id, issued_at, features_as_of, due_at, paid_at, payment_status, currency, paid_amount, credit_amount, disputed. Model amounts are EUR major units; ledger amounts are integer minor units. Status must be explicitly `paid`, `unpaid` or `partial`; unknown is rejected. `paid_at` means full cash settlement, not last partial receipt. Paid requires full amount and date; partial requires a strictly positive incomplete amount and no full-settlement date; unpaid requires zero cash. Credits and disputes need separate resolution. Due dates must precede cutoff; future settlements are rejected. Both outcome classes are required.
 
-Outputs: dataset fingerprint, declared source and rights, model fingerprint, classification metrics and top-10 comparisons against amount/history rules. Inputs stay local; output contains aggregates, not customer rows. Rights declarations and feature timestamps require human verification: a timestamp cannot prove that historical aggregates were correctly constructed. Missing features must be reconstructed point-in-time from eligible completed history, not filled with synthetic values.
+Ledger JSON has `bills` and `events` arrays using the fields in [OPERATIONS.md](OPERATIONS.md). The three historical features are recomputed strictly before issuance and compared to input. No eligible history routes to manual review instead of fabricating a score. Day-level dates conservatively exclude same-day events. Other features, snapshot status history, source completeness, currency consistency and source rights still need human audit. A malicious or incomplete ledger can pass syntactic checks; this is not provenance certification.
+
+Outputs: input/ledger/model fingerprints, declared provenance, classification metrics and top-10 amount/history comparisons. No input rows are uploaded or included in the aggregate report. The synthetic-trained frozen model is evaluated without tuning. This admission route is not evidence that external validation has happened.
 
 Private data and outputs must stay outside the public repository. No messages, requests to dataset owners or uploads were sent.
 

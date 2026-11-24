@@ -18,3 +18,5 @@ frontend/public/reading/
 artifacts/browser-fixtures.json
 
 data/private/
+
+artifacts/training-data.csv

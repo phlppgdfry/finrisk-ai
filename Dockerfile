@@ -12,7 +12,7 @@ COPY requirements-lock.txt ./
 RUN pip install --no-cache-dir -r requirements-lock.txt
 COPY . .
 COPY --from=frontend /app/frontend/dist ./frontend/dist
-RUN python -m invoice_risk.train && python -m scripts.report && python -m scripts.export_browser && cp -r frontend/public/data frontend/public/reading frontend/dist/ && python -m scripts.package \
+RUN python -m scripts.model_release restore && python -m scripts.report && python -m scripts.export_browser && cp -r frontend/public/data frontend/public/reading frontend/dist/ && python -m scripts.package \
     && useradd --create-home --uid 10001 finrisk && chown -R finrisk:finrisk /app
 USER finrisk
 EXPOSE 8000

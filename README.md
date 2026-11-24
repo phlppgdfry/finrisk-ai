@@ -16,7 +16,7 @@ The GitHub Pages site runs all 220 exported trees directly in JavaScript. It use
 
 Open **How it works** to step through any of the 220 real trees, play its decision path, edit the invoice profile and compare the tree with the forest average. Explanation text is available in Dutch and English.
 
-On the public site CSV scoring happens in browser memory. There is no remote Python server, account or invoice upload. The Python/FastAPI implementation remains available locally. Source ZIPs from GitHub contain source code; run the training commands below to regenerate artifacts.
+On the public site CSV scoring happens in browser memory. There is no remote Python server, account or invoice upload. The Python/FastAPI implementation remains available locally. Source ZIPs from GitHub contain source code; run `make restore` to recover the exact published model and data.
 
 ## Start on your Mac
 
@@ -24,7 +24,7 @@ Requires Python **3.13** and Node **22.12+** (Node 24 also tested). From the pro
 
 ```sh
 make setup
-make train
+make restore
 make build
 make check
 make package
@@ -40,6 +40,7 @@ For UI development, run the API in one terminal and `npm --prefix frontend run d
 ## What works
 
 - **Overview:** actual portfolio totals, risk histogram, filterable collection priorities and CSV export.
+- **Daily workflow:** 15-day ledger replay, ten-dossier capacity, customer cooldown, partial payments/credits, manual cold-start lane and three policy comparisons. [Contract and pilot](docs/OPERATIONS.md).
 - **Invoices:** search, risk bands, sorting, accessible detail dialog and model sensitivity.
 - **How it works:** inspect actual tree nodes, thresholds, alternative branches and leaf estimates; 220 clickable per-tree estimates; NL/EN explanations.
 - **Scenario lab:** seven validated inputs, three presets, actual inference, first-run comparison and stale-result indicator.
@@ -123,7 +124,7 @@ npm --prefix frontend run test:e2e
 
 Python tests cover deterministic generation, disjoint chronological partitions, feature availability, schema validation, future-field rejection, batch limits, score consistency, threshold provenance, exports and artifact integrity. Browser QA covers filters, sorting, details, scenario comparisons, CSV success/error, model slider and responsive pages. See [verification](docs/VERIFICATION.md) for actual results and limits.
 
-The CI and Pages definitions train and check from source on Python 3.13 / Node 22 and stores evaluation artifacts. The Pages workflow gates publication on Python checks, browser/Python parity and desktop/mobile browser tests.
+The CI and Pages definitions restore the checksum-verified release and check it on Python 3.13 / Node 22 and stores evaluation artifacts. The Pages workflow gates publication on Python checks, browser/Python parity and desktop/mobile browser tests.
 
 Container option:
 
@@ -131,7 +132,7 @@ Container option:
 docker compose up --build
 ```
 
-Compose maps **127.0.0.1:8011**, uses a non-root user, read-only filesystem and a temporary `/tmp`. Stop the local API first to free the port. The image retrains during build; performance can vary slightly across platforms. See verification for whether Docker was available during this build.
+Compose maps **127.0.0.1:8011**, uses a non-root user, read-only filesystem and a temporary `/tmp`. Stop the local API first to free the port. The image restores the committed model release during build. See verification for whether Docker was available during this build.
 
 ## Understand it and present it
 
@@ -154,7 +155,7 @@ npm --prefix frontend exec playwright install chromium
 npm --prefix frontend run test:pages
 ```
 
-`make train` also exports browser data. `make pages` produces `frontend/dist-pages`. The Actions workflow exports a fresh matching forest and report before every deployment. Relative Vite base paths keep asset and download links valid below `/finrisk-ai/`. No secret API keys are needed.
+`make train` also exports browser data. `make pages` produces `frontend/dist-pages`. The Actions workflow restores the fixed model/dataset/report release before every deployment; documentation changes do not retrain it. Relative Vite base paths keep asset and download links valid below `/finrisk-ai/`. No secret API keys are needed.
 
 Read [the next-step roadmap in Dutch](docs/ROADMAP_NL.md) for the most valuable improvements: real-data validation, operational baselines, calibrated scores and a measured pilot.
 
@@ -165,3 +166,7 @@ Model report now compares top-5/10/20/50/100 prioritisation using Random Forest,
 How it works now compares actual tree structures and explains bootstrap sampling, feature subsampling, the configured 220-tree count and probability averaging.
 
 Real-data status remains **not externally validated**. See [source review and admission contract](docs/REAL_DATA.md). A working local frozen-model evaluation command is supplied in `scripts/validate_real.py`. Authorised input data, feature provenance and label maturity must be provided before real-data validation can be completed.
+
+## Operational release v1.2.0
+
+Model, synthetic training dataset, report, browser export and daily replay are frozen together under `releases/v1.2.0` with SHA-256 integrity checks. [Daily workflow](https://phlppgdfry.github.io/finrisk-ai/#operations) shows multi-day prioritisation without attributing predetermined payments to reminders. The local real-data validator now requires explicit payment state and a dated ledger for reconstructing history. A separate customer-level pilot reporter checks allocation, equal windows and cash/time outcomes. **No real dataset or pilot result is claimed.** See [operational contract, pilot and release instructions](docs/OPERATIONS.md).

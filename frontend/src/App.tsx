@@ -1,3 +1,4 @@
+import { OperationsLab } from "./OperationsLab";
 import { resource, STATIC_DEMO, REPOSITORY, asset } from "./runtime";
 import { useState, useEffect } from "react";
 import {
@@ -43,6 +44,7 @@ import {
 } from "./types";
 const pages = [
   { id: "overview", label: "Overview", icon: LayoutDashboard },
+  { id: "operations", label: "Daily workflow", icon: FileText },
   { id: "invoices", label: "Invoices", icon: FileText },
   { id: "scenario", label: "Scenario lab", icon: FlaskConical },
   { id: "learn", label: "How it works", icon: GitBranch },
@@ -380,6 +382,7 @@ export default function App() {
                 />
               )}
               {page === "learn" && <TreeExplorer />}
+              {page === "operations" && <OperationsLab />}
               {page === "model" && <ModelReport report={report} />}
               {page === "case-study" && (
                 <CaseStudy

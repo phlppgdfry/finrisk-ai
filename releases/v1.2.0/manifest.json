@@ -1,0 +1,17 @@
+{
+  "release": "v1.2.0",
+  "files": {
+    "artifacts/model.joblib": "6a142be26013eeeedaa8dbeaa373e5034d64312c737411d2254dfa107e330dc9",
+    "artifacts/report.json": "1aea846f0772522a911c455eeb706ce92147fd3e320d76269d064fd7b3c586dd",
+    "artifacts/browser-fixtures.json": "c407c0b2f7612342beb051fba2daace5726311e8751504d88418c3d21a10b965",
+    "artifacts/training-data.csv": "8416624c05bf79d61ea47eadb7b6629b3c4605e7a5d7db92cf233b57caf88513",
+    "frontend/public/data/forest.json": "7efff2865d698371827035bff26c64669ab5316d7cbde9fe914840abfdf5c346",
+    "frontend/public/data/report.json": "cff5486394b92897dd00f6b7e9659e2119c6b89d03793087f9767e4927035ae7",
+    "frontend/public/data/portfolio.json": "8dc8d6019e9be39159b107159d2293fb7a678d0a166b6604d7666bfb9e64f013",
+    "frontend/public/data/portfolio.csv": "84806c7dc4791a859730ab78f805505c58ee6f7456051df4b24a650bba60823d",
+    "frontend/public/data/sample.csv": "3961ad71b26fc2453c622464b653134d4fffedb63f93aa8a3ce3994c5c6d3d88",
+    "frontend/public/data/operations.json": "b81a08761b16975daa7f68b7fa14cb6ca842cd532810b03b59827133784e768c"
+  },
+  "training": "synthetic seed 42",
+  "model_version": "1.0.0"
+}

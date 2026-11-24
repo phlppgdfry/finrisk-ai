@@ -13,7 +13,7 @@ Local results: **24 Python tests, 2 portable-engine tests and 14 desktop/mobile 
 - Python lint and 24 model/API tests pass.
 - Two portable-engine tests check 824 Python oracle predictions plus real-leaf termination and mean aggregation. Maximum observed absolute prediction difference: 2.220446049250313e-16. Cases include the 64 portfolio invoices, 400 independent examples and values on/near split thresholds.
 - A dedicated static-site Playwright configuration tests without the Python API. It covers desktop and mobile: existing invoice/search/export/scenario/CSV/model workflows, all six pages, and the actual tree explorer, language switch, profile update, tree selection and playback.
-- Every publication workflow retrains, exports matching artifacts, checks Python and browser parity, builds the static app and runs browser tests before uploading the Pages artifact.
+- The original v2 publication workflow retrained on each publication. From release v1.2.0 it restores the checksum-verified fixed release, exports matching artifacts, checks parity and browser behavior before uploading Pages.
 - Relative Vite asset paths are used below `/finrisk-ai/`; all model/document/CSV URLs use the same base path. Source links target the real repository.
 - On the static site, CSV scoring remains entirely within browser memory. No inference API, private record upload or third-party model service is used.
 

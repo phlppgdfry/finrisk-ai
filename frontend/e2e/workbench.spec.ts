@@ -128,6 +128,7 @@ test("sorting and portfolio download work", async ({ page }) => {
 test("all pages fit viewport and have one main heading", async ({ page }) => {
   for (const name of [
     "Overview",
+    "Daily workflow",
     "Invoices",
     "Scenario lab",
     "How it works",
@@ -142,4 +143,18 @@ test("all pages fit viewport and have one main heading", async ({ page }) => {
       ),
     ).toBe(true);
   }
+});
+
+test("daily workflow exposes the release, policy and manual lane", async ({
+  page,
+}) => {
+  await page.getByRole("link", { name: "Daily workflow", exact: true }).click();
+  await expect(
+    page.getByRole("heading", { name: "Een werkdag, tien dossiers." }),
+  ).toBeVisible();
+  await expect(page.getByText(/v1.2.0/)).toBeVisible();
+  await page.getByLabel("Werkdag").selectOption("14");
+  await page.getByLabel("Opvolgstrategie").selectOption("history");
+  expect(await page.locator("tbody tr").count()).toBeLessThanOrEqual(10);
+  await expect(page.getByText(/Handmatige beoordeling/).first()).toBeVisible();
 });

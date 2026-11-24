@@ -8,6 +8,7 @@ train:
 	$(PYTHON) -m invoice_risk.train
 	$(PYTHON) -m scripts.report
 	$(PYTHON) -m scripts.export_browser
+	$(PYTHON) -m scripts.operations_demo
 build:
 	npm --prefix frontend run build
 test:
@@ -26,6 +27,11 @@ benchmark:
 
 .PHONY: pages
 pages:
+	$(PYTHON) -m scripts.model_release restore
 	$(PYTHON) -m scripts.export_browser
 	npm --prefix frontend run test:parity
 	npm --prefix frontend run build:pages
+
+.PHONY: restore
+restore:
+	$(PYTHON) -m scripts.model_release restore

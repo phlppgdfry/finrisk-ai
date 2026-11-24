@@ -1297,3 +1297,17 @@ main {
     font-size: 12px;
   }
 }
+.pilot-panel {
+  margin-top: 24px;
+}
+.pilot-panel > p {
+  font-size: 13px;
+  margin-top: 15px;
+  line-height: 1.85;
+}
+.pilot-panel .learning-steps {
+  gap: 25px;
+}
+.pilot-panel .learning-steps h2 {
+  font-size: 25px;
+}
