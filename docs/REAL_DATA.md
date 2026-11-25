@@ -1,6 +1,6 @@
 # Real-data readiness — status: not yet externally validated
 
-Reviewed 22 November 2026. No real invoice-level validation result is claimed. The current capacity evaluation uses synthetic validation and test data, not production invoices.
+Reviewed 22 November 2026. The frozen seven-feature EUR forest has not been externally validated. A separate public-data candidate is documented below. The current capacity evaluation uses synthetic validation and test data, not production invoices.
 
 ## Public-source investigation
 
@@ -25,3 +25,9 @@ Private data and outputs must stay outside the public repository. No messages, r
 ## What is needed to finish genuine external validation
 
 A dataset or approved internal export with verified reuse rights, a data owner, correct issuance-time history, invoice due/payment dates, matching currency/amount units and label-maturity cutoff. Assess customer recurrence, temporal leakage, domain shift and sampling bias before interpreting results. A successful schema check alone is not validation of operational usefulness.
+
+## Additional admitted public source — November 2026
+
+The official SECOP II Plan de pagos metadata states CC BY-SA 4.0 and supplies administrative issuance, payment-due and actual-payment dates. A bounded projection without personal/contact or monetary fields was fetched and frozen. See [the separate benchmark](../benchmarks/secop/README.md) and its [data licence](../benchmarks/secop/LICENSE-DATA.md).
+
+The different six-feature candidate achieved ROC-AUC 0.850 on 245 final test records; a shorter-term rule achieved 0.841. Paid-only sampling, incomplete history, unverified original recording times, public-procurement domain and payment-plan deadline semantics limit interpretation. This is not external validation of the existing EUR forest and does not test reminders. No finance-review participation is claimed.

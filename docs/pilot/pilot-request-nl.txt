@@ -1,0 +1,20 @@
+Onderwerp: Korte inhoudelijke review van een ML-portfolio rond factuuropvolging
+
+Beste,
+
+Ik ben Philippe Godfroy. Ik ontwikkelde met AI-ondersteuning FinRisk AI: een demonstratie van factuurrisico, uitlegbare beslisbomen en een dagelijkse opvolgwerklijst.
+
+Demo: https://phlppgdfry.github.io/finrisk-ai/#case-study
+
+De interactieve facturen zijn synthetisch. Er is daarnaast een afzonderlijke benchmark op gelicentieerde openbare overheidsbetalingen; ik stel die niet voor als bewijs van bruikbaarheid in een Belgisch bedrijf of als resultaat van herinneringen.
+
+Zou een finance- of creditmanagementmedewerker ongeveer 30 minuten willen meekijken naar de veldbetekenissen, de huidige opvolgwerkwijze en de fouten die in de praktijk belangrijk zijn? Eerst zonder echte klantgegevens. Ik vraag geen endorsement.
+
+Als de vraag relevant blijkt, wil ik samen een kleine, vooraf afgebakende proef voorbereiden. Gebruik van bedrijfsdata zou alleen na toestemming van de juiste data-eigenaar, met lokale verwerking en afgesproken bewaring gebeuren. We leggen ook vast wat niet gemeten kan worden en voeren niets automatisch uit richting klanten.
+
+Ik kan vooraf een korte video, datacontract en reviewvragen bezorgen. Laat gerust weten of dit past, welke voorwaarden of vergoeding gelden, of wie ik beter kan benaderen.
+
+Met vriendelijke groet,
+Philippe Godfroy
+
+CONCEPT — niet verzonden. Pas aan vóór persoonlijk gebruik.

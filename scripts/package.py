@@ -19,7 +19,7 @@ def package():
         "test-results",
         "playwright-report",
     }
-    allowed_roots = {"invoice_risk", "scripts", "tests", "frontend", "docs", "artifacts", ".github", "releases"}
+    allowed_roots = {"invoice_risk", "scripts", "tests", "frontend", "docs", "artifacts", ".github", "releases", "benchmarks"}
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as archive:
         for path in sorted(ROOT.rglob("*")):
             rel = path.relative_to(ROOT)

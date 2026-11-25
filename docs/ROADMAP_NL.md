@@ -56,3 +56,12 @@ Schrijf een kort beslislogboek: probleem, alternatieven, gekozen aanpak, tests, 
 - Vaste model-, dataset-, rapport- en browserrelease met checksumcontrole; publicatie traint niet opnieuw.
 
 Open blijven: passende toegelaten bedrijfsdata, echte integratie en gebruikersobservaties, een correct uitgevoerde pilot en bewijs van effect. Zie [operationeel contract](OPERATIONS.md).
+
+## Gerealiseerd in versie 1.3
+
+- Sollicitatievideo van circa 70 seconden met echte app-opnames en Nederlandse ondertitels.
+- Afzonderlijke, reproduceerbare benchmark op officieel gelicentieerde openbare SECOP-betaalrecords, inclusief eenvoudige termijnenregel en duidelijke beperkingen.
+- Downloadbaar finance-pilotpakket, contactroutes en niet-verzonden conceptaanvraag.
+- Lokale cohortregistratie en controle op volledige deelnemers, lege uitkomsten en afgeronde meetvensters.
+
+Een daadwerkelijke finance-review, bedrijfsvalidatie en interventiepilot blijven nog uit te voeren. Een publieke benchmark of lege sjablonen vervangen die stappen niet.

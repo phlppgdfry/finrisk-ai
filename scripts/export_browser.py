@@ -82,8 +82,11 @@ def export():
     (out / "sample.csv").write_text(sample.getvalue())
     docs = ROOT / "frontend/public/reading"
     docs.mkdir(exist_ok=True)
-    for name in ["MODEL_CARD.md", "LEERGIDS_NL.md", "INTERVIEW_NL.md", "DATA_CONTRACT.md", "evaluation.html"]:
+    for name in ["MODEL_CARD.md", "LEERGIDS_NL.md", "INTERVIEW_NL.md", "DATA_CONTRACT.md", "evaluation.html", "DEMO_NL.md"]:
         (docs / name).write_bytes((ROOT / "docs" / name).read_bytes())
+    (docs / "secop-report.json").write_bytes((ROOT / "benchmarks/secop/report.json").read_bytes())
+    from scripts.build_pilot_kit import build
+    build()
     print(
         f"Exported {len(trees)} real trees, {(out / 'forest.json').stat().st_size / 1e6:.2f} MB; {len(records)} parity fixtures"
     )

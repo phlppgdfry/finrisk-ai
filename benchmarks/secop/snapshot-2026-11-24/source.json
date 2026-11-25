@@ -1,0 +1,23 @@
+{
+  "source": "SECOP II - Plan de pagos",
+  "publisher": "Agencia Nacional de Contrataci\u00f3n P\u00fablica - Colombia Compra Eficiente, Bogot\u00e1 D.C.",
+  "source_url": "https://www.datos.gov.co/Estad-sticas-Nacionales/SECOP-II-Plan-de-pagos/uymx-8p3j",
+  "metadata_url": "https://www.datos.gov.co/api/views/uymx-8p3j.json",
+  "licence": {
+    "name": "Creative Commons Attribution | Share Alike 4.0 International",
+    "logoUrl": "images/licenses/cc30bysa.png",
+    "termsLink": "http://creativecommons.org/licenses/by-sa/4.0/legalcode"
+  },
+  "retrieved_at": "2026-11-24T10:08:19.551196+00:00",
+  "sha256": "a5a8931a4fd0bda30128d1d0ca952613cf68b4d2858397d46ef644c38221d2c3",
+  "rows_downloaded": 12000,
+  "selection": "First 12000 paid API records with nonempty due and actual payment dates, in default source order; then benchmark selects records issued in 2023. Bounded convenience sample, not representative.",
+  "queries": [
+    {
+      "url": "https://www.datos.gov.co/resource/uymx-8p3j.json?%24select=id_del_contrato%2Cid_de_pago%2Cfecha_de_emision%2Cfecha_de_vencimiento%2Cfecha_real_de_pago%2Cvalor_total_de_la_factura%2Cestado%2Ccodigo_entidad&%24where=estado+%3D+%22Pagado%22+AND+fecha_real_de_pago+IS+NOT+NULL+AND+fecha_de_vencimiento+IS+NOT+NULL&%24limit=12000",
+      "rows": 12000
+    }
+  ],
+  "transformation": "Contract/payment key and public payer code SHA-256 pseudonyms; retain dates only. No amounts or currency assumptions. SHA-256 is not anonymisation against source lookup. The retrieved response included invoice amount; it was discarded, not interpreted or redistributed.",
+  "raw_response_sha256": "224ac3658e706dec418487816b94ae02f09c7ee6b32131e3404a26bb1bedff03"
+}

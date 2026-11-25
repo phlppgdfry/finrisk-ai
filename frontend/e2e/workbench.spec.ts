@@ -158,3 +158,38 @@ test("daily workflow exposes the release, policy and manual lane", async ({
   expect(await page.locator("tbody tr").count()).toBeLessThanOrEqual(10);
   await expect(page.getByText(/Handmatige beoordeling/).first()).toBeVisible();
 });
+
+test("recruiter demo plays and separate public evidence is clearly scoped", async ({
+  page,
+}) => {
+  await page.getByRole("link", { name: "Case study", exact: true }).click();
+  const video = page.getByLabel("Sollicitatiedemo van FinRisk AI", {
+    exact: true,
+  });
+  await expect(video).toBeVisible();
+  await expect
+    .poll(() =>
+      video.evaluate((v: HTMLVideoElement) =>
+        Number.isFinite(v.duration) ? v.duration : 0,
+      ),
+    )
+    .toBeGreaterThan(60);
+  await video.evaluate((v: HTMLVideoElement) => v.play());
+  await expect
+    .poll(() => video.evaluate((v: HTMLVideoElement) => v.currentTime))
+    .toBeGreaterThan(0);
+  await video.evaluate((v: HTMLVideoElement) => v.pause());
+  await expect(
+    page
+      .getByRole("table", { name: "Aparte publieke benchmark" })
+      .locator("tbody tr"),
+  ).toHaveCount(5);
+  await expect(
+    page.getByText("Finance-pilot: nog niet uitgevoerd.", { exact: true }),
+  ).toBeVisible();
+  const download = page.waitForEvent("download");
+  await page
+    .getByRole("link", { name: "Download finance-pilotpakket", exact: true })
+    .click();
+  expect((await download).suggestedFilename()).toBe("finrisk-pilot-kit.zip");
+});

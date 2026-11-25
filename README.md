@@ -8,7 +8,7 @@
 
 The project asks a practical question: **which newly issued invoices deserve human follow-up first?** Explore 64 synthetic invoices, inspect a prediction, test a customer profile, score a numeric CSV batch, and challenge the model against simpler baselines.
 
-**Independent portfolio, built with AI assistance. Synthetic data only. No affiliation with BrightAnalytics, production-readiness claim, or validated financial performance.**
+**Independent portfolio, built with AI assistance. Interactive demo: synthetic data. Separate public-payment benchmark: CC BY-SA 4.0. No affiliation with BrightAnalytics, production-readiness claim, or validated financial performance.**
 
 ## Public demo: real ML in the browser
 
@@ -144,7 +144,7 @@ Compose maps **127.0.0.1:8011**, uses a non-root user, read-only filesystem and 
 
 A job-worthy next step is to reproduce the run, change one component yourself, explain why logistic regression wins, and show how the error trade-off changes. Do not claim independent production ML experience just because this demo exists.
 
-MIT licensed. No credentials or paid AI services required. The generated illustration is a visual metaphor, not customer or model evidence.
+Software and demo video: MIT licensed. The separate SECOP snapshot and derived report use CC BY-SA 4.0; see benchmarks/secop/LICENSE-DATA.md. No credentials or paid AI services required. The generated illustration is a visual metaphor, not customer or model evidence.
 
 ## Publish and reproduce the static site
 
@@ -170,3 +170,13 @@ Real-data status remains **not externally validated**. See [source review and ad
 ## Operational release v1.2.0
 
 Model, synthetic training dataset, report, browser export and daily replay are frozen together under `releases/v1.2.0` with SHA-256 integrity checks. [Daily workflow](https://phlppgdfry.github.io/finrisk-ai/#operations) shows multi-day prioritisation without attributing predetermined payments to reminders. The local real-data validator now requires explicit payment state and a dated ledger for reconstructing history. A separate customer-level pilot reporter checks allocation, equal windows and cash/time outcomes. **No real dataset or pilot result is claimed.** See [operational contract, pilot and release instructions](docs/OPERATIONS.md).
+
+## Recruiter demo and public-data benchmark — v1.3
+
+[Watch the 70-second demo](https://phlppgdfry.github.io/finrisk-ai/#case-study) · [Transcript and speaking notes](docs/DEMO_NL.md) · [Finance pilot kit](docs/pilot/README.md)
+
+A real browser recording shows one invoice, that same profile in an actual tree, the forest average and the daily queue. Dutch captions, no synthetic personal voice. The frozen synthetic browser forest remains release v1.2.0.
+
+A **separate six-feature public-data candidate** was evaluated on licensed SECOP II paid administrative records: 1,173 usable records in the bounded 2023 sample, 245 held-out November–December records. Forest ROC-AUC 0.850, logistic regression 0.825 and a shorter-payment-term rule 0.841. The rule is close; no meaningful incremental advantage has been established. [Full source, protocol, caveats and licence](benchmarks/secop/README.md). This does not validate the seven-feature EUR demo forest or establish performance for a Belgian business.
+
+The local pilot workspace now registers a complete cohort, produces blank outcome records, checks the fixed protocol and blocks incomplete/early reporting. Contact routes and an unsent review request are prepared. **No finance reviewer, corporate pilot or causal reminder benefit is claimed.**

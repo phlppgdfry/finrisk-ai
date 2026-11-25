@@ -1,0 +1,49 @@
+{
+  "trim": 1.273,
+  "duration": 69.68900000000001,
+  "chapters": [
+    {
+      "start": 0,
+      "title": "01 / FinRisk AI",
+      "text": "E\u00e9n factuur. E\u00e9n boom. Een dagelijkse werklijst."
+    },
+    {
+      "start": 5.086,
+      "title": "02 / Een factuur",
+      "text": "INV-26034 \u00b7 \u20ac 1.205,08 \u00b7 circa 74,7% modelscore. Geen zekerheid over betaling."
+    },
+    {
+      "start": 14.239,
+      "title": "03 / Dezelfde factuur in boom 1",
+      "text": "Elke splitsing stelt \u00e9\u00e9n vraag. Links of rechts volgt uit de ingevulde waarde."
+    },
+    {
+      "start": 30.356,
+      "title": "04 / 220 bomen middelen",
+      "text": "Elke boom gebruikt andere steekproeven en splitsingen. Het bos middelt hun kansen."
+    },
+    {
+      "start": 39.58,
+      "title": "05 / Dagelijkse opvolging",
+      "text": "Maximaal tien dossiers. E\u00e9n per klant. Zeven dagen rust na een beoordeling."
+    },
+    {
+      "start": 50.093999999999994,
+      "title": "06 / Vergelijk met een eenvoudige regel",
+      "text": "Andere strategie, eigen opvolghistoriek. Nieuwe klanten krijgen handmatige beoordeling."
+    },
+    {
+      "start": 56.663,
+      "title": "07 / Bewijs boven complexiteit",
+      "text": "Synthetische evaluatie: een eenvoudige regel kan winnen. Nog geen bewezen incassowinst."
+    },
+    {
+      "start": 63.687999999999995,
+      "title": "08 / Philippe Godfroy \u00b7 portfolio",
+      "text": "Met AI-ondersteuning gebouwd. Echte modelberekeningen, volledig synthetische demo."
+    }
+  ],
+  "invoice_id": "INV-26034",
+  "source": "actual public application; source model release v1.2.0",
+  "captions": "separate editorial layer below the captured viewport; no fabricated UI"
+}

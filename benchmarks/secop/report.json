@@ -1,0 +1,214 @@
+{
+  "status": "separate_public_benchmark_not_finrisk_external_validation",
+  "experiment_id": "secop-2023-v1",
+  "pipeline_sha256": "942a4db73cb6181cfbc9741ed4dbea4f058903ac70086574894cccb332bfc452",
+  "sklearn_version": "1.7.2",
+  "source": {
+    "source": "SECOP II - Plan de pagos",
+    "publisher": "Agencia Nacional de Contrataci\u00f3n P\u00fablica - Colombia Compra Eficiente, Bogot\u00e1 D.C.",
+    "source_url": "https://www.datos.gov.co/Estad-sticas-Nacionales/SECOP-II-Plan-de-pagos/uymx-8p3j",
+    "licence": {
+      "name": "Creative Commons Attribution | Share Alike 4.0 International",
+      "logoUrl": "images/licenses/cc30bysa.png",
+      "termsLink": "http://creativecommons.org/licenses/by-sa/4.0/legalcode"
+    },
+    "retrieved_at": "2026-11-24T10:08:19.551196+00:00",
+    "sha256": "a5a8931a4fd0bda30128d1d0ca952613cf68b4d2858397d46ef644c38221d2c3",
+    "selection": "First 12000 paid API records with nonempty due and actual payment dates, in default source order; then benchmark selects records issued in 2023. Bounded convenience sample, not representative."
+  },
+  "data_quality": {
+    "downloaded": 12000,
+    "duplicate_ids_removed": 6,
+    "invalid_or_outside_window_removed": 10821,
+    "accepted": 1173,
+    "outcomes_unavailable_at_train_or_validation_cutoff": 89
+  },
+  "features": [
+    "term_days",
+    "month",
+    "weekday",
+    "settled_history",
+    "prior_late_rate",
+    "prior_mean_delay"
+  ],
+  "target": "Payment recorded on a later calendar day than the payment due date, among sampled paid records only.",
+  "splits": {
+    "train": {
+      "rows": 662,
+      "late": 305,
+      "payer_count": 313,
+      "cold_start": 355,
+      "issued_from": "2023-01-01",
+      "issued_to": "2023-08-31"
+    },
+    "validation": {
+      "rows": 177,
+      "late": 65,
+      "payer_count": 135,
+      "cold_start": 60,
+      "issued_from": "2023-09-01",
+      "issued_to": "2023-10-31"
+    },
+    "test": {
+      "rows": 245,
+      "late": 99,
+      "payer_count": 168,
+      "cold_start": 45,
+      "issued_from": "2023-11-01",
+      "issued_to": "2023-12-31"
+    }
+  },
+  "protocol": "Fixed Jan-Aug training, Sep-Oct validation, Nov-Dec test (2023). Training settlements known before September; validation settlements before November. Final outcomes before April 2024. Fixed 0.5 threshold; no search/tuning or refitting on test. No entity identifiers as features.",
+  "models": {
+    "Random Forest (public-data candidate)": {
+      "validation": {
+        "roc_auc": 0.9072802197802198,
+        "pr_auc": 0.8670445408499364,
+        "brier": 0.12198057379323739,
+        "precision": 0.8028169014084507,
+        "recall": 0.8769230769230769,
+        "f1": 0.8382352941176471,
+        "accuracy": 0.8757062146892656,
+        "tn": 98,
+        "fp": 14,
+        "fn": 8,
+        "tp": 57,
+        "toy_cost": 54,
+        "flagged": 71
+      },
+      "test": {
+        "roc_auc": 0.8499377334993773,
+        "pr_auc": 0.8485550989854018,
+        "brier": 0.14626955177022383,
+        "precision": 0.8111111111111111,
+        "recall": 0.7373737373737373,
+        "f1": 0.7724867724867724,
+        "accuracy": 0.8244897959183674,
+        "tn": 129,
+        "fp": 17,
+        "fn": 26,
+        "tp": 73,
+        "toy_cost": 147,
+        "flagged": 90
+      }
+    },
+    "Logistic regression": {
+      "validation": {
+        "roc_auc": 0.8906593406593407,
+        "pr_auc": 0.7945702043817444,
+        "brier": 0.12983035304659146,
+        "precision": 0.7962962962962963,
+        "recall": 0.6615384615384615,
+        "f1": 0.7226890756302521,
+        "accuracy": 0.8135593220338984,
+        "tn": 101,
+        "fp": 11,
+        "fn": 22,
+        "tp": 43,
+        "toy_cost": 121,
+        "flagged": 54
+      },
+      "test": {
+        "roc_auc": 0.8245122457451226,
+        "pr_auc": 0.7794303876413966,
+        "brier": 0.1664840762494149,
+        "precision": 0.8208955223880597,
+        "recall": 0.5555555555555556,
+        "f1": 0.6626506024096386,
+        "accuracy": 0.7714285714285715,
+        "tn": 134,
+        "fp": 12,
+        "fn": 44,
+        "tp": 55,
+        "toy_cost": 232,
+        "flagged": 67
+      }
+    },
+    "Prior-only baseline": {
+      "validation": {
+        "roc_auc": 0.5,
+        "pr_auc": 0.3672316384180791,
+        "brier": 0.24111358494561003,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "accuracy": 0.632768361581921,
+        "tn": 112,
+        "fp": 0,
+        "fn": 65,
+        "tp": 0,
+        "toy_cost": 325,
+        "flagged": 0
+      },
+      "test": {
+        "roc_auc": 0.5,
+        "pr_auc": 0.40408163265306124,
+        "brier": 0.2440081464263035,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "accuracy": 0.5959183673469388,
+        "tn": 146,
+        "fp": 0,
+        "fn": 99,
+        "tp": 0,
+        "toy_cost": 495,
+        "flagged": 0
+      }
+    }
+  },
+  "capacity": {
+    "Random Forest (public-data candidate)": {
+      "k": 10,
+      "late_found": 10,
+      "false_alarms": 0,
+      "precision": 1.0,
+      "recall": 0.10101010101010101,
+      "lift": 2.4747474747474745
+    },
+    "Logistic regression": {
+      "k": 10,
+      "late_found": 8,
+      "false_alarms": 2,
+      "precision": 0.8,
+      "recall": 0.08080808080808081,
+      "lift": 1.97979797979798
+    },
+    "Prior-only baseline": {
+      "k": 10,
+      "late_found": 6,
+      "false_alarms": 4,
+      "precision": 0.6,
+      "recall": 0.06060606060606061,
+      "lift": 1.4848484848484846
+    },
+    "Historical late-rate rule": {
+      "k": 10,
+      "late_found": 4,
+      "false_alarms": 6,
+      "precision": 0.4,
+      "recall": 0.04040404040404041,
+      "lift": 0.98989898989899
+    },
+    "Shorter payment-term rule": {
+      "k": 10,
+      "late_found": 9,
+      "false_alarms": 1,
+      "precision": 0.9,
+      "recall": 0.09090909090909091,
+      "lift": 2.227272727272727
+    }
+  },
+  "rule_auc": {
+    "Historical late-rate rule": 0.6872146118721462,
+    "Shorter payment-term rule": 0.8414279784142797
+  },
+  "limits": [
+    "This is a different model and domain: public procurement payments in Colombia, not Belgian corporate receivables or the frozen EUR forest.",
+    "Only records marked Pagado with due/payment dates are sampled. Unpaid, partial, disputed and cancelled cases are not represented; results cannot be generalised to all invoices.",
+    "The source is an administrative snapshot. Actual settlement dates filter historical features, but recording/availability timestamps and retrospective corrections are not available; no fully audited point-in-time provenance claim.",
+    "Paid-only, capped monthly convenience sample; row-level metrics and top-10 pool comparison are not an operational pilot or a representative late-payment rate.",
+    "Payment schedule due dates are used as published; a finance owner has not confirmed that they are contractual invoice deadlines. Dates normalised to calendar days; same-day timestamps ignored.",
+    "No amount/currency features, cash-recovery estimates, reminder effect, causal benefit, participant or finance reviewer is claimed. Scores are uncalibrated and no payer-cluster confidence intervals are supplied."
+  ]
+}

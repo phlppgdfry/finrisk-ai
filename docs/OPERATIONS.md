@@ -50,3 +50,7 @@ python -m scripts.model_release freeze --version v1.3.0  # alleen bij bewuste ni
 ```
 
 Kies een ongebruikte versie en controleer kandidaat, rapport en parity vóór freeze. Commit de snapshot en code samen. Documentatiepublicatie, CI en Docker herstellen de gekozen release en trainen niet opnieuw. Nieuwe code/afhankelijkheden kunnen nog steeds incompatibel worden; de tests blijven daarom verplicht. Dit model is op synthetische gegevens getraind en bewijst geen prestaties op bedrijfsdata.
+
+## Pilot starten met het v1.3-pakket
+
+Gebruik [docs/pilot/README.md](pilot/README.md) voor intake, lokale cohortregistratie, lege logboeken en compleet-cohortrapportage. Het losse JSON-rapportcommando hierboven blijft beschikbaar, maar bindt zelf geen cohort; de workspace-route voorkomt dat deelnemers ongemerkt uit het aangeleverde rapport verdwijnen. Er is nog geen echte bedrijfsproef uitgevoerd. De afzonderlijke openbare benchmark staat in [benchmarks/secop](../benchmarks/secop/README.md).

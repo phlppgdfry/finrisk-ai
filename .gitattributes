@@ -2,3 +2,6 @@
 # Preserve the exact bytes covered by release checksums.
 releases/** -text
 releases/**/*.csv whitespace=cr-at-eol
+
+benchmarks/secop/snapshot-*/** -text
+scripts/benchmark_secop.py text eol=lf

@@ -1311,3 +1311,8 @@ main {
 .pilot-panel .learning-steps h2 {
   font-size: 25px;
 }
+
+.recruiter-demo, .pilot-evidence { margin-bottom: 28px; }
+.recruiter-demo video { display:block; width:100%; aspect-ratio:16/9; background:#123e2f; border-radius:10px; margin:24px 0 16px; }
+.demo-links { display:flex; gap:12px; flex-wrap:wrap; margin-top:22px; }
+.pilot-evidence .insight { margin:22px 0; }

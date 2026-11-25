@@ -166,7 +166,7 @@ export default function App() {
           <div className="disclosure">
             <Info size={16} />
             <div>
-              <strong>Synthetic data only</strong>
+              <strong>Demo invoices: synthetic</strong>
               <p>
                 A working ML demonstration.
                 <br />
@@ -175,7 +175,7 @@ export default function App() {
             </div>
           </div>
           <div className="author">
-            Philippe Godfroy <span>v1.1</span>
+            Philippe Godfroy <span>v1.3</span>
           </div>
         </div>
       </aside>

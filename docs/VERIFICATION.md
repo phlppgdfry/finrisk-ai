@@ -82,3 +82,11 @@ The public repository and GitHub Pages site are published at phlppgdfry/finrisk-
 Local checks: 38 Python tests passed, Ruff and TypeScript passed, 824 Python/browser predictions matched (maximum absolute error 2.22e-16), 18 static-site and 18 local API-backed browser tests passed across desktop Chromium and mobile Chromium emulation. Coverage includes dated-ledger history reconstruction and rejection of plausible but mismatched aggregates, unknown settlement status, partials/credits, customer cooldown, capacity, release corruption/overwrite rejection, daily page controls and responsive width. The model, original synthetic training CSV and evaluation report fingerprints agree.
 
 No real-data validation or reminder-effect measurement was performed. A local validator and descriptive pilot reporter are tools for that future work; their existence is not evidence of successful finance deployment. Safari/Firefox and actual mobile hardware were not tested in this update.
+
+## Recruiter demo and public benchmark — 25 November 2026
+
+43 Python checks passed, including full pilot-cohort admission, blank/future-window rejection, protocol tampering, missing participants and strictly earlier settlement history. Static and local API-backed websites: 20 desktop/mobile browser checks passed for each, including actual video metadata/playback and pilot ZIP download. TypeScript, Ruff and 824 Python/browser reference predictions passed.
+
+The silent 69.68-second H.264 video is 1440×810 at 25 fps and under 1 MB. Real browser actions, the same invoice in the dashboard/tree, a separate caption strip and actual release v1.2.0 synthetic predictions. Contact sheets and an enlarged tree frame were reviewed; the tree segment was re-recorded for visibility. Poster is a frame from the video. No fabricated UI, voice, music or customer records.
+
+The public-data benchmark is reproducible offline from the committed CC BY-SA snapshot. Snapshot and pipeline SHA-256 are checked. The final 245-row test is separate from the synthetic demo; no corporate validation, finance reviewer, reminder effect, clustered significance test or production deployment is claimed. See benchmarks/secop for exclusions and sampling/availability limits. The shorter-term rule nearly matches the forest.

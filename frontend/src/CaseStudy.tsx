@@ -1,3 +1,4 @@
+import { PilotEvidence } from "./PilotEvidence";
 import { resource, STATIC_DEMO, REPOSITORY, asset } from "./runtime";
 import {
   ArrowRight,
@@ -36,6 +37,47 @@ export function CaseStudy({
           <Download size={16} /> Download source
         </a>
       </div>
+      <Panel className="recruiter-demo">
+        <span className="eyebrow">
+          Sollicitatiedemo · Nederlands · circa 70 seconden
+        </span>
+        <h2>Eén factuur. Eén boom. Een werkdag.</h2>
+        <p>
+          Echte opnames van de werkende applicatie, met Nederlandse tekst.
+          Zonder stem of muziek; geschikt om zelf live bij toe te lichten. De
+          facturen en resultaten in de video zijn synthetisch.
+        </p>
+        <video
+          controls
+          playsInline
+          preload="metadata"
+          poster={asset("media/finrisk-demo-poster.jpg")}
+          aria-label="Sollicitatiedemo van FinRisk AI"
+        >
+          <source src={asset("media/finrisk-demo-nl.mp4")} type="video/mp4" />
+          <track
+            kind="subtitles"
+            src={asset("media/finrisk-demo-nl.vtt")}
+            srcLang="nl"
+            label="Nederlands"
+          />
+          Je browser ondersteunt deze video niet. Gebruik de downloadlink
+          hieronder.
+        </video>
+        <div className="demo-links">
+          <a
+            className="secondary"
+            href={asset("media/finrisk-demo-nl.mp4")}
+            download
+          >
+            Download sollicitatiedemo
+          </a>
+          <a className="secondary" href={asset("reading/DEMO_NL.md")}>
+            Lees transcript en spreektekst
+          </a>
+        </div>
+      </Panel>
+      <PilotEvidence />
       <section className="case-hero">
         <div>
           <h2>
@@ -64,7 +106,7 @@ export function CaseStudy({
               {r.rows.toLocaleString()} synthetic invoices · held-out evaluation
             </dd>
             <dt>Scope</dt>
-            <dd>Public interactive demonstrator · synthetic data only</dd>
+            <dd>Synthetic interactive demo + separate public-data benchmark</dd>
           </dl>
         </div>
       </section>
