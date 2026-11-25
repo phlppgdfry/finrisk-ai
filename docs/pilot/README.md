@@ -6,7 +6,7 @@ Een korte productdemo en een afzonderlijke benchmark op gelicentieerde openbare 
 
 ## Eerst een review, dan een proef
 
-1. Gebruik [contactroutes](contact-routes.md) en de [conceptaanvraag](pilot-request-nl.txt) voor een eerste gesprek zonder gegevens. Geen berichten zijn verzonden.
+1. Gebruik [contactroutes](contact-routes.md) en de [conceptaanvraag](pilot-request-nl.txt) voor een eerste gesprek zonder gegevens. Een eerste reviewaanvraag is op 25 november 2026 met toestemming naar IvKM verstuurd. Reactie en deelname zijn nog niet bevestigd.
 2. Laat de echte medewerker [finance-review.md](finance-review.md) invullen. Bespreek uitgiftevoorspelling versus opvolging van achterstallige facturen, betaalstatus, credits, registratietijdstippen, tijdsbesteding en huidige regels.
 3. Leg met de data-eigenaar bron, toegelaten verwerking, lokale opslag, mapping van gepseudonimiseerde klanten en bewaartermijn vast. Laat de omvang en onzekerheidsanalyse door een geschikte methodereviewer beoordelen. Geen universele steekproefgrootte of ROI beloven.
 4. Begin met een lokale audit/backtest op een volledig tijdvenster, inclusief onbetaalde en afwijkende dossiers. Gebruik het ledgercontract in ../OPERATIONS.md. Ontbrekende modelkenmerken mogen niet worden verzonnen; een ander model heeft een nieuw protocol nodig.
